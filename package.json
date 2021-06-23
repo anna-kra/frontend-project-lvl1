@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/anna-kra/frontend-project-lvl1#readme",
   "bin": {
-    "code": "brain-games.js",
     "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js"
   },
