@@ -6,3 +6,5 @@
 [![Node CI](https://github.com/anna-kra/frontend-project-lvl1/actions/workflows/nodejs.yml/badge.svg)](https://github.com/anna-kra/frontend-project-lvl1/actions/workflows/nodejs.yml)
 
 https://asciinema.org/a/qg4HOaE6pbimrqaD7gtTnvi23
+
+https://asciinema.org/a/gnkLbRjTiJZJRYQka066xkQVr
