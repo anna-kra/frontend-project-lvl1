@@ -39,7 +39,6 @@ export const brainGcd = () => {
     console.log(`Question: ${rundomInt1} ${rundomInt2}`);
 
     const answer = Number(question('Your answer: '));
-    console.log(typeof answer);
     const answerCorrect = isAnswerCorrect(rundomInt1, rundomInt2, answer, userName);
 
     console.log(isAnswerCorrect(rundomInt1, rundomInt2, answer, userName));
