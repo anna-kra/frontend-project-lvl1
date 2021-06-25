@@ -1,8 +1,5 @@
 import { question, greeting } from './cli.js';
-
-const getRandomInt = (max) => Math.floor(Math.random() * max);
-
-const isPrime = (num) => ((num % 2 === 0) ? 'yes' : 'no');
+import { getRandomInt, isPrime } from './common-functions.js';
 
 export const isAnswerCorrect = (randomInt, answer, userName) => {
   let output = '';

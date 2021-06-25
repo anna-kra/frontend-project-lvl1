@@ -1,6 +1,5 @@
 import { question, greeting } from './cli.js';
-
-const getRandomInt = (max) => Math.floor(Math.random() * max);
+import { getRandomInt } from './common-functions.js';
 
 const getRandomSymbol = (arrSymbols) => arrSymbols[getRandomInt(arrSymbols.length)];
 
