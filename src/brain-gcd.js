@@ -15,7 +15,7 @@ const getBiggestCommonDivider = (num1, num2) => {
   return 1;
 };
 
-export const isAnswerCorrect = (num1, num2, answer, userName) => {
+const isAnswerCorrect = (num1, num2, answer, userName) => {
   let output = '';
 
   if (getBiggestCommonDivider(num1, num2) === answer) {
@@ -27,20 +27,18 @@ export const isAnswerCorrect = (num1, num2, answer, userName) => {
   return output;
 };
 
-export const brainGcd = () => {
+const brainGcd = () => {
   const userName = greeting();
   let counter = 0;
+  console.log('Find the greatest common divisor of given numbers.');
 
   for (let i = 1; i <= 3; i += 1) {
     const rundomInt1 = getRandomInt(100);
     const rundomInt2 = getRandomInt(100);
 
-    console.log('Find the greatest common divisor of given numbers.');
     console.log(`Question: ${rundomInt1} ${rundomInt2}`);
-
     const answer = Number(question('Your answer: '));
     const answerCorrect = isAnswerCorrect(rundomInt1, rundomInt2, answer, userName);
-
     console.log(isAnswerCorrect(rundomInt1, rundomInt2, answer, userName));
 
     if (answerCorrect !== 'Correct!') {
@@ -53,3 +51,5 @@ export const brainGcd = () => {
     console.log(`Congratulations, ${userName}`);
   }
 };
+
+export default brainGcd;
