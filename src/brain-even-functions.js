@@ -1,17 +1,7 @@
 import { question, greeting } from './cli.js';
 import { getRandomInt, isPrime } from './common-functions.js';
 
-const isAnswerCorrect = (randomInt, userAnswer, userName) => {
-  let output = '';
-
-  if (isPrime(randomInt) === userAnswer) {
-    output = 'Correct!';
-  } else {
-    output = `'${userAnswer}' is wrong answer ;(. Correct answer was '${isPrime(randomInt)}'. Let's try again, ${userName}!`;
-  }
-
-  return output;
-};
+const isAnswerCorrect = (randomInt, userAnswer) => isPrime(randomInt) === userAnswer;
 
 const brainEven = () => {
   const userName = greeting();
@@ -20,21 +10,21 @@ const brainEven = () => {
 
   for (let i = 1; i <= 3; i += 1) {
     const randomInt = getRandomInt(1000);
-
     console.log(`Question: ${randomInt}`);
     const userAnswer = question('Your answer: ');
-    const answerCorrect = isAnswerCorrect(randomInt, userAnswer, userName);
-    console.log(isAnswerCorrect(randomInt, userAnswer, userName));
 
-    if (answerCorrect !== 'Correct!') {
-      break;
-    } else {
+    if (isAnswerCorrect(randomInt, userAnswer)) {
+      console.log('Correct!');
       counter += 1;
+    } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${isPrime(randomInt)}'. Let's try again, ${userName}!`);
+      return false;
     }
   }
   if (counter === 3) {
     console.log(`Congratulations, ${userName}`);
   }
+  return true;
 };
 
 export default brainEven;
