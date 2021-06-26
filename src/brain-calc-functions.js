@@ -24,7 +24,7 @@ const calculate = (num1, num2, symbol) => {
   return result;
 };
 
-export const isAnswerCorrect = (randomInt1, randomInt2, randomSymbol, answer, userName) => {
+const isAnswerCorrect = (randomInt1, randomInt2, randomSymbol, answer, userName) => {
   let output = '';
 
   if (calculate(randomInt1, randomInt2, randomSymbol) === answer) {
@@ -36,7 +36,7 @@ export const isAnswerCorrect = (randomInt1, randomInt2, randomSymbol, answer, us
   return output;
 };
 
-export const brainCalc = () => {
+const brainCalc = () => {
   const userName = greeting();
   let counter = 0;
 
@@ -62,3 +62,5 @@ export const brainCalc = () => {
     console.log(`Congratulations, ${userName}`);
   }
 };
+
+export default brainCalc;
