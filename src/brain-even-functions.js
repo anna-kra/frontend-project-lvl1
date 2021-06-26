@@ -1,7 +1,7 @@
 import { question, greeting } from './cli.js';
-import { getRandomInt, isPrime } from './common-functions.js';
+import { getRandomInt, isEven } from './common-functions.js';
 
-const isAnswerCorrect = (randomInt, userAnswer) => isPrime(randomInt) === userAnswer;
+const isAnswerCorrect = (randomInt, userAnswer) => isEven(randomInt) === userAnswer;
 
 const brainEven = () => {
   const userName = greeting();
@@ -17,7 +17,7 @@ const brainEven = () => {
       console.log('Correct!');
       counter += 1;
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${isPrime(randomInt)}'. Let's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${isEven(randomInt)}'. Let's try again, ${userName}!`);
       return false;
     }
   }
