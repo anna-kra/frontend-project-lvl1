@@ -1,13 +1,13 @@
 import { question, greeting } from './cli.js';
 import { getRandomInt, isPrime } from './common-functions.js';
 
-const isAnswerCorrect = (randomInt, answer, userName) => {
+const isAnswerCorrect = (randomInt, userAnswer, userName) => {
   let output = '';
 
-  if (isPrime(randomInt) === answer) {
+  if (isPrime(randomInt) === userAnswer) {
     output = 'Correct!';
   } else {
-    output = `'${answer}' is wrong answer ;(. Correct answer was '${isPrime(randomInt)}'. Let's try again, ${userName}!`;
+    output = `'${userAnswer}' is wrong answer ;(. Correct answer was '${isPrime(randomInt)}'. Let's try again, ${userName}!`;
   }
 
   return output;
@@ -22,9 +22,9 @@ const brainEven = () => {
     const randomInt = getRandomInt(1000);
 
     console.log(`Question: ${randomInt}`);
-    const answer = question('Your answer: ');
-    const answerCorrect = isAnswerCorrect(randomInt, answer, userName);
-    console.log(isAnswerCorrect(randomInt, answer, userName));
+    const userAnswer = question('Your answer: ');
+    const answerCorrect = isAnswerCorrect(randomInt, userAnswer, userName);
+    console.log(isAnswerCorrect(randomInt, userAnswer, userName));
 
     if (answerCorrect !== 'Correct!') {
       break;
