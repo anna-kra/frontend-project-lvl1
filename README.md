@@ -5,8 +5,13 @@
 
 [![Node CI](https://github.com/anna-kra/frontend-project-lvl1/actions/workflows/nodejs.yml/badge.svg)](https://github.com/anna-kra/frontend-project-lvl1/actions/workflows/nodejs.yml)
 
-https://asciinema.org/a/qg4HOaE6pbimrqaD7gtTnvi23
+https://asciinema.org/a/EG4xibHDB7fswJYrSmGlEoObt
 
-https://asciinema.org/a/gnkLbRjTiJZJRYQka066xkQVr
+https://asciinema.org/a/V8ICokYyTVbdY1ZNoXGkvkdF7
 
-https://asciinema.org/a/NQLwsSQhO36AunHT2kWF9Bxxk
+https://asciinema.org/a/LqdgLpLaSq4ZrUja4eYUS3my7
+
+https://asciinema.org/a/Oqe7j5RJZFlA7k5vitSyTtoKW
+
+https://asciinema.org/a/Vja608MXNFKsJ2mE431LfMrtR
+
