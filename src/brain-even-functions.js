@@ -1,7 +1,7 @@
 import { question, greeting } from './cli.js';
 import { getRandomInt, isPrime } from './common-functions.js';
 
-export const isAnswerCorrect = (randomInt, answer, userName) => {
+const isAnswerCorrect = (randomInt, answer, userName) => {
   let output = '';
 
   if (isPrime(randomInt) === answer) {
@@ -13,12 +13,12 @@ export const isAnswerCorrect = (randomInt, answer, userName) => {
   return output;
 };
 
-export const brainEven = () => {
+const brainEven = () => {
   const userName = greeting();
   let counter = 0;
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   for (let i = 1; i <= 3; i += 1) {
-    console.log('Answer "yes" if the number is even, otherwise answer "no".');
     const randomInt = getRandomInt(1000);
 
     console.log(`Question: ${randomInt}`);
@@ -36,3 +36,5 @@ export const brainEven = () => {
     console.log(`Congratulations, ${userName}`);
   }
 };
+
+export default brainEven;
