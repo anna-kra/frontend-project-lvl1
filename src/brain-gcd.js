@@ -15,17 +15,9 @@ const getBiggestCommonDivider = (num1, num2) => {
   return 1;
 };
 
-const isAnswerCorrect = (num1, num2, answer, userName) => {
-  let output = '';
-
-  if (getBiggestCommonDivider(num1, num2) === answer) {
-    output = 'Correct!';
-  } else {
-    output = `'${answer}' is wrong answer ;(. Correct answer was '${getBiggestCommonDivider(num1, num2)}'. Let's try again, ${userName}!`;
-  }
-
-  return output;
-};
+const isAnswerCorrect = (num1, num2, userAnswer) => (
+  getBiggestCommonDivider(num1, num2) === userAnswer
+);
 
 const brainGcd = () => {
   const userName = greeting();
@@ -37,19 +29,21 @@ const brainGcd = () => {
     const rundomInt2 = getRandomInt(100);
 
     console.log(`Question: ${rundomInt1} ${rundomInt2}`);
-    const answer = Number(question('Your answer: '));
-    const answerCorrect = isAnswerCorrect(rundomInt1, rundomInt2, answer, userName);
-    console.log(isAnswerCorrect(rundomInt1, rundomInt2, answer, userName));
+    const userAnswer = Number(question('Your answer: '));
 
-    if (answerCorrect !== 'Correct!') {
-      break;
-    } else {
+    if (isAnswerCorrect(rundomInt1, rundomInt2, userAnswer)) {
+      console.log('Correct!');
       counter += 1;
+    } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${getBiggestCommonDivider(rundomInt1, rundomInt2)}'. Let's try again, ${userName}!`);
+      return false;
     }
   }
+
   if (counter === 3) {
     console.log(`Congratulations, ${userName}`);
   }
+  return true;
 };
 
 export default brainGcd;
