@@ -37,7 +37,7 @@ const brainPrime = () => {
   }
 
   if (counter === 3) {
-    console.log(`Congratulations, ${userName}`);
+    console.log(`Congratulations, ${userName}!`);
   }
   return true;
 };

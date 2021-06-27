@@ -5,7 +5,7 @@ const getRandomSymbol = (arrSymbols) => arrSymbols[getRandomInt(arrSymbols.lengt
 
 const calculate = (num1, num2, symbol) => {
   let result = 0;
-  // console.log(symbol);
+
   switch (symbol) {
     case '+':
       result = num1 + num2;
@@ -51,7 +51,7 @@ const brainCalc = () => {
     }
   }
   if (counter === 3) {
-    console.log(`Congratulations, ${userName}`);
+    console.log(`Congratulations, ${userName}!`);
   }
   return true;
 };
