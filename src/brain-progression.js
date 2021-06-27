@@ -10,7 +10,7 @@ const generateProgression = () => {
   const stepInProgression = getRandomInt(10);
   // The step in progression will be from 1 till 10 included
 
-  const progressionLength = getIntBetween(5, 10);
+  const progressionLength = getIntBetween(6, 10);
   // The length of progression must be greater then 5 and shorter then 10
 
   const progression = [];
