@@ -37,7 +37,7 @@ const brainProgression = () => {
     const randomPartInProgression = progression[randomIndex];
     const progressionQuiz = [...progression];
     progressionQuiz[randomIndex] = '..';
-    console.log(`Question: ${progressionQuiz}`);
+    console.log(`Question: ${progressionQuiz.join(' ')}`);
     const userAnswer = Number(question('Your answer: '));
     console.log(userAnswer);
 
