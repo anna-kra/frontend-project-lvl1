@@ -1,5 +1,8 @@
+import {
+  question, getUserName, printGreeting, printCongratulations, printCorrect,
+} from './cli.js';
+
 import { getRandomInt, getIntBetween } from './common-functions.js';
-import { question, getUserName, greeting } from './cli.js';
 
 const MAX_START_IN_PROGRESSION = 100;
 const MAX_STEP_IN_PROGRESSION = 10;
@@ -26,7 +29,7 @@ const isAnswerCorrect = (randomPartInProgression, userAnswer) => (
 const brainProgression = () => {
   let counter = 0;
   const userName = getUserName();
-  greeting(userName);
+  printGreeting(userName);
   console.log('What number is missing in the progression?');
 
   for (let i = 1; i <= 3; i += 1) {
@@ -40,7 +43,7 @@ const brainProgression = () => {
     console.log(userAnswer);
 
     if (isAnswerCorrect(randomPartInProgression, userAnswer)) {
-      console.log('Correct!');
+      printCorrect();
       counter += 1;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${randomPartInProgression}'. Let's try again, ${userName}!`);
@@ -48,7 +51,7 @@ const brainProgression = () => {
     }
   }
   if (counter === 3) {
-    console.log(`Congratulations, ${userName}!`);
+    printCongratulations(userName);
   }
   return true;
 };

@@ -1,4 +1,7 @@
-import { question, getUserName, greeting } from './cli.js';
+import {
+  question, getUserName, printGreeting, printCongratulations, printCorrect,
+} from './cli.js';
+
 import { getRandomInt } from './common-functions.js';
 
 const getRandomSymbol = (arrSymbols) => arrSymbols[getRandomInt(arrSymbols.length - 1)];
@@ -32,7 +35,7 @@ const isAnswerCorrect = (randomInt1, randomInt2, randomSymbol, userAnswer) => (
 const brainCalc = () => {
   let counter = 0;
   const userName = getUserName();
-  greeting(userName);
+  printGreeting(userName);
   console.log('What is the result of the expression?');
 
   for (let i = 1; i <= 3; i += 1) {
@@ -44,7 +47,7 @@ const brainCalc = () => {
     const userAnswer = Number(question('Your answer: '));
 
     if (isAnswerCorrect(randomInt1, randomInt2, randomSymbol, userAnswer)) {
-      console.log('Correct!');
+      printCorrect();
       counter += 1;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was ${calculate(randomInt1, randomInt2, randomSymbol)}. Let's try again, ${userName}!`);
@@ -52,7 +55,7 @@ const brainCalc = () => {
     }
   }
   if (counter === 3) {
-    console.log(`Congratulations, ${userName}!`);
+    printCongratulations(userName);
   }
   return true;
 };

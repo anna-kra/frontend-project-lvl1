@@ -1,5 +1,8 @@
 import { getRandomInt } from './common-functions.js';
-import { question, getUserName, greeting } from './cli.js';
+
+import {
+  question, getUserName, printGreeting, printCongratulations, printCorrect,
+} from './cli.js';
 
 const isPrime = (num) => {
   let numIsPrime = 'yes';
@@ -21,7 +24,7 @@ const isAnswerCorrect = (num, userAnswer) => (
 const brainPrime = () => {
   let counter = 0;
   const userName = getUserName();
-  greeting(userName);
+  printGreeting(userName);
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
   for (let i = 1; i <= 3; i += 1) {
@@ -31,7 +34,7 @@ const brainPrime = () => {
     const userAnswer = question('Your answer: ');
 
     if (isAnswerCorrect(rundomInt, userAnswer)) {
-      console.log('Correct!');
+      printCorrect();
       counter += 1;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${isPrime(rundomInt)}'. Let's try again, ${userName}!`);
@@ -40,7 +43,7 @@ const brainPrime = () => {
   }
 
   if (counter === 3) {
-    console.log(`Congratulations, ${userName}!`);
+    printCongratulations(userName);
   }
   return true;
 };

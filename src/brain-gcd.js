@@ -1,7 +1,8 @@
-import { getRandomInt } from './common-functions.js';
-import { question, getUserName, greeting } from './cli.js';
+import { getRandomInt, getMinOfTwoNumbers } from './common-functions.js';
 
-const getMinOfTwoNumbers = (num1, num2) => (num1 < num2 ? num1 : num2);
+import {
+  question, getUserName, printGreeting, printCongratulations, printCorrect,
+} from './cli.js';
 
 const getBiggestCommonDivider = (num1, num2) => {
   const minOfTwoNumbers = getMinOfTwoNumbers(num1, num2);
@@ -22,7 +23,7 @@ const isAnswerCorrect = (num1, num2, userAnswer) => (
 const brainGcd = () => {
   let counter = 0;
   const userName = getUserName();
-  greeting(userName);
+  printGreeting(userName);
   console.log('Find the greatest common divisor of given numbers.');
 
   for (let i = 1; i <= 3; i += 1) {
@@ -33,7 +34,7 @@ const brainGcd = () => {
     const userAnswer = Number(question('Your answer: '));
 
     if (isAnswerCorrect(rundomInt1, rundomInt2, userAnswer)) {
-      console.log('Correct!');
+      printCorrect();
       counter += 1;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${getBiggestCommonDivider(rundomInt1, rundomInt2)}'. Let's try again, ${userName}!`);
@@ -42,7 +43,7 @@ const brainGcd = () => {
   }
 
   if (counter === 3) {
-    console.log(`Congratulations, ${userName}!`);
+    printCongratulations(userName);
   }
   return true;
 };
