@@ -1,4 +1,4 @@
-import { question, greeting } from './cli.js';
+import { question, getUserName, greeting } from './cli.js';
 import { getRandomInt } from './common-functions.js';
 
 const getRandomSymbol = (arrSymbols) => arrSymbols[getRandomInt(arrSymbols.length - 1)];
@@ -30,8 +30,9 @@ const isAnswerCorrect = (randomInt1, randomInt2, randomSymbol, userAnswer) => (
 );
 
 const brainCalc = () => {
-  const userName = greeting();
   let counter = 0;
+  const userName = getUserName();
+  greeting(userName);
   console.log('What is the result of the expression?');
 
   for (let i = 1; i <= 3; i += 1) {

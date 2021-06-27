@@ -1,11 +1,12 @@
-import { question, greeting } from './cli.js';
+import { question, getUserName, greeting } from './cli.js';
 import { getRandomInt, isEven } from './common-functions.js';
 
 const isAnswerCorrect = (randomInt, userAnswer) => isEven(randomInt) === userAnswer;
 
 const brainEven = () => {
-  const userName = greeting();
   let counter = 0;
+  const userName = getUserName();
+  greeting(userName);
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   for (let i = 1; i <= 3; i += 1) {

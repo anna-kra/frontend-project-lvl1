@@ -1,22 +1,19 @@
-import { getRandomInt } from './common-functions.js';
-import { question, greeting } from './cli.js';
+import { getRandomInt, getIntBetween } from './common-functions.js';
+import { question, getUserName, greeting } from './cli.js';
 
-const getIntBetween = (min, max) => min + Math.floor(Math.random() * (max - min));
+const MAX_START_IN_PROGRESSION = 100;
+const MAX_STEP_IN_PROGRESSION = 10;
+const MIN_LENGTH_OF_PROGRESSION = 5;
+const MAX_LENGTH_OF_PROGRESSION = 10;
 
 const generateProgression = () => {
-  const startInProgression = getRandomInt(100);
-  // Progression can start from 1 till 100 included
-
-  const stepInProgression = getRandomInt(10);
-  // The step in progression will be from 1 till 10 included
-
-  const progressionLength = getIntBetween(5, 10);
-  // The length of progression must be greater then 5 and shorter then 10
-
+  const start = getRandomInt(MAX_START_IN_PROGRESSION);
+  const step = getRandomInt(MAX_STEP_IN_PROGRESSION);
+  const length = getIntBetween(MIN_LENGTH_OF_PROGRESSION, MAX_LENGTH_OF_PROGRESSION);
   const progression = [];
 
-  for (let i = 0; i < progressionLength; i += 1) {
-    progression.push(startInProgression + stepInProgression * i);
+  for (let i = 0; i < length; i += 1) {
+    progression.push(start + step * i);
   }
 
   return progression;
@@ -27,8 +24,9 @@ const isAnswerCorrect = (randomPartInProgression, userAnswer) => (
 );
 
 const brainProgression = () => {
-  const userName = greeting();
   let counter = 0;
+  const userName = getUserName();
+  greeting(userName);
   console.log('What number is missing in the progression?');
 
   for (let i = 1; i <= 3; i += 1) {

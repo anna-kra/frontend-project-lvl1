@@ -1,5 +1,5 @@
 import { getRandomInt } from './common-functions.js';
-import { question, greeting } from './cli.js';
+import { question, getUserName, greeting } from './cli.js';
 
 const getMinOfTwoNumbers = (num1, num2) => (num1 < num2 ? num1 : num2);
 
@@ -20,8 +20,9 @@ const isAnswerCorrect = (num1, num2, userAnswer) => (
 );
 
 const brainGcd = () => {
-  const userName = greeting();
   let counter = 0;
+  const userName = getUserName();
+  greeting(userName);
   console.log('Find the greatest common divisor of given numbers.');
 
   for (let i = 1; i <= 3; i += 1) {

@@ -1,5 +1,5 @@
 import { getRandomInt } from './common-functions.js';
-import { question, greeting } from './cli.js';
+import { question, getUserName, greeting } from './cli.js';
 
 const isPrime = (num) => {
   let numIsPrime = 'yes';
@@ -14,11 +14,14 @@ const isPrime = (num) => {
   return numIsPrime;
 };
 
-const isAnswerCorrect = (num, userAnswer) => (isPrime(num) === 'yes' && userAnswer === 'yes') || (isPrime(num) === 'no' && userAnswer === 'no');
+const isAnswerCorrect = (num, userAnswer) => (
+  (isPrime(num) === 'yes' && userAnswer === 'yes') || (isPrime(num) === 'no' && userAnswer === 'no')
+);
 
 const brainPrime = () => {
-  const userName = greeting();
   let counter = 0;
+  const userName = getUserName();
+  greeting(userName);
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
   for (let i = 1; i <= 3; i += 1) {
