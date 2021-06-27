@@ -10,7 +10,7 @@ const generateProgression = () => {
   const stepInProgression = getRandomInt(10);
   // The step in progression will be from 1 till 10 included
 
-  const progressionLength = getIntBetween(6, 10);
+  const progressionLength = getIntBetween(5, 10);
   // The length of progression must be greater then 5 and shorter then 10
 
   const progression = [];
@@ -36,7 +36,7 @@ const brainProgression = () => {
     const randomIndex = getIntBetween(0, progression.length - 1);
     const randomPartInProgression = progression[randomIndex];
     const progressionQuiz = [...progression];
-    progressionQuiz[randomIndex] = '...';
+    progressionQuiz[randomIndex] = '..';
     console.log(`Question: ${progressionQuiz}`);
     const userAnswer = Number(question('Your answer: '));
     console.log(userAnswer);
