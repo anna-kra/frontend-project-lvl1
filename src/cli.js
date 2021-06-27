@@ -12,3 +12,5 @@ export const printGreeting = (userName) => {
 export const printCongratulations = (userName) => console.log(`Congratulations, ${userName}!`);
 
 export const printCorrect = () => console.log('Correct!');
+
+export const printDirective = (obj, prop) => console.log(obj[prop]);

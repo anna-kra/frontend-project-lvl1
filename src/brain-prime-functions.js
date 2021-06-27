@@ -1,8 +1,10 @@
 import { getRandomInt } from './common-functions.js';
 
 import {
-  question, getUserName, printGreeting, printCongratulations, printCorrect,
+  question, getUserName, printGreeting, printCongratulations, printCorrect, printDirective,
 } from './cli.js';
+
+import directives from './texts.js';
 
 const isPrime = (num) => {
   let numIsPrime = 'yes';
@@ -25,7 +27,7 @@ const brainPrime = () => {
   let counter = 0;
   const userName = getUserName();
   printGreeting(userName);
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  printDirective(directives, 'prime');
 
   for (let i = 1; i <= 3; i += 1) {
     const rundomInt = getRandomInt(200);

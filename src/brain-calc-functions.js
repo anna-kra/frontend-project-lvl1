@@ -1,8 +1,10 @@
 import {
-  question, getUserName, printGreeting, printCongratulations, printCorrect,
+  question, getUserName, printGreeting, printCongratulations, printCorrect, printDirective,
 } from './cli.js';
 
 import { getRandomInt } from './common-functions.js';
+
+import directives from './texts.js';
 
 const getRandomSymbol = (arrSymbols) => arrSymbols[getRandomInt(arrSymbols.length - 1)];
 
@@ -36,7 +38,7 @@ const brainCalc = () => {
   let counter = 0;
   const userName = getUserName();
   printGreeting(userName);
-  console.log('What is the result of the expression?');
+  printDirective(directives, 'calc');
 
   for (let i = 1; i <= 3; i += 1) {
     const randomInt1 = getRandomInt(10);

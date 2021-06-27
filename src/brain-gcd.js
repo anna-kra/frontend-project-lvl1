@@ -1,8 +1,10 @@
 import { getRandomInt, getMinOfTwoNumbers } from './common-functions.js';
 
 import {
-  question, getUserName, printGreeting, printCongratulations, printCorrect,
+  question, getUserName, printGreeting, printCongratulations, printCorrect, printDirective,
 } from './cli.js';
+
+import directives from './texts.js';
 
 const getBiggestCommonDivider = (num1, num2) => {
   const minOfTwoNumbers = getMinOfTwoNumbers(num1, num2);
@@ -24,7 +26,7 @@ const brainGcd = () => {
   let counter = 0;
   const userName = getUserName();
   printGreeting(userName);
-  console.log('Find the greatest common divisor of given numbers.');
+  printDirective(directives, 'gcd');
 
   for (let i = 1; i <= 3; i += 1) {
     const rundomInt1 = getRandomInt(100);

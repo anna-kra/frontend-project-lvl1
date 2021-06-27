@@ -1,8 +1,11 @@
 import {
-  question, getUserName, printGreeting, printCongratulations, printCorrect,
+  question, getUserName, printGreeting, printCongratulations, printCorrect, printDirective,
 } from './cli.js';
 
 import { getRandomInt, isEven } from './common-functions.js';
+import directives from './texts.js';
+
+const MAX_RANDOM_NUMBER = 1000;
 
 const isAnswerCorrect = (randomInt, userAnswer) => isEven(randomInt) === userAnswer;
 
@@ -10,10 +13,10 @@ const brainEven = () => {
   let counter = 0;
   const userName = getUserName();
   printGreeting(userName);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  printDirective(directives, 'even');
 
   for (let i = 1; i <= 3; i += 1) {
-    const randomInt = getRandomInt(1000);
+    const randomInt = getRandomInt(MAX_RANDOM_NUMBER);
     console.log(`Question: ${randomInt}`);
     const userAnswer = question('Your answer: ');
 

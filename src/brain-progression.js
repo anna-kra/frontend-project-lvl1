@@ -1,8 +1,10 @@
 import {
-  question, getUserName, printGreeting, printCongratulations, printCorrect,
+  question, getUserName, printGreeting, printCongratulations, printCorrect, printDirective,
 } from './cli.js';
 
 import { getRandomInt, getIntBetween } from './common-functions.js';
+
+import directives from './texts.js';
 
 const MAX_START_IN_PROGRESSION = 100;
 const MAX_STEP_IN_PROGRESSION = 10;
@@ -30,7 +32,7 @@ const brainProgression = () => {
   let counter = 0;
   const userName = getUserName();
   printGreeting(userName);
-  console.log('What number is missing in the progression?');
+  printDirective(directives, 'progression');
 
   for (let i = 1; i <= 3; i += 1) {
     const progression = generateProgression();
