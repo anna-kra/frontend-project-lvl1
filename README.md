@@ -13,12 +13,13 @@ https://asciinema.org/a/LqdgLpLaSq4ZrUja4eYUS3my7
 
 https://asciinema.org/a/Oqe7j5RJZFlA7k5vitSyTtoKW
 
-https://asciinema.org/a/Vja608MXNFKsJ2mE431LfMrtR
+https://asciinema.org/a/pHtI1atNTuoyltYHSXOzV3Vd6
 
-https://asciinema.org/a/PYiWCjPnSBJULvDY1ejJrQ7QK
+https://asciinema.org/a/AhfD7KCjaAgfyL7sillBoEJib
 
 
-// ******************* //
+// ******************* //  
+
 Кирилл, привет. 
 
 Довела проект до состояния, когда уже нужна твоя помощь, поэтому отсылаю на проверку. 
