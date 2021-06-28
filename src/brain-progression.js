@@ -1,8 +1,10 @@
-import {
-  question, getUserName, printGreeting, printCongratulations, printCorrect, printDirective,
-} from './cli.js';
-
 import { getRandomInt, getIntBetween } from './common-functions.js';
+
+import {
+  question, getUserName,
+  printGreeting, printGreetingByName, printDirective, printQuestion,
+  printCorrect, printNotCorrect, printCongratulations,
+} from './cli.js';
 
 import directives from './texts.js';
 
@@ -30,25 +32,30 @@ const isAnswerCorrect = (randomPartInProgression, userAnswer) => (
 
 const brainProgression = () => {
   let counter = 0;
+
+  printGreeting();
   const userName = getUserName();
-  printGreeting(userName);
+  printGreetingByName(userName);
   printDirective(directives, 'progression');
 
   for (let i = 1; i <= 3; i += 1) {
     const progression = generateProgression();
     const randomIndex = getIntBetween(0, progression.length - 1);
     const randomPartInProgression = progression[randomIndex];
+    const correctAnswer = randomPartInProgression;
+
     const progressionQuiz = [...progression];
     progressionQuiz[randomIndex] = '..';
-    console.log(`Question: ${progressionQuiz.join(' ')}`);
+    const progressionQuizPresentation = progressionQuiz.join(' ');
+
+    printQuestion(progressionQuizPresentation);
     const userAnswer = Number(question('Your answer: '));
-    console.log(userAnswer);
 
     if (isAnswerCorrect(randomPartInProgression, userAnswer)) {
       printCorrect();
       counter += 1;
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${randomPartInProgression}'. Let's try again, ${userName}!`);
+      printNotCorrect(userAnswer, correctAnswer, userName);
       return false;
     }
   }

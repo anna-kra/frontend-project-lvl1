@@ -1,8 +1,11 @@
+import { getRandomInt, isEven } from './common-functions.js';
+
 import {
-  question, getUserName, printGreeting, printCongratulations, printCorrect, printDirective,
+  question, getUserName,
+  printGreeting, printGreetingByName, printDirective, printQuestion,
+  printCorrect, printNotCorrect, printCongratulations,
 } from './cli.js';
 
-import { getRandomInt, isEven } from './common-functions.js';
 import directives from './texts.js';
 
 const MAX_RANDOM_NUMBER = 1000;
@@ -11,20 +14,24 @@ const isAnswerCorrect = (randomInt, userAnswer) => isEven(randomInt) === userAns
 
 const brainEven = () => {
   let counter = 0;
+
+  printGreeting();
   const userName = getUserName();
-  printGreeting(userName);
+  printGreetingByName(userName);
   printDirective(directives, 'even');
 
   for (let i = 1; i <= 3; i += 1) {
     const randomInt = getRandomInt(MAX_RANDOM_NUMBER);
-    console.log(`Question: ${randomInt}`);
+    const correctAnswer = isEven(randomInt);
+
+    printQuestion(randomInt);
     const userAnswer = question('Your answer: ');
 
     if (isAnswerCorrect(randomInt, userAnswer)) {
       printCorrect();
       counter += 1;
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${isEven(randomInt)}'. Let's try again, ${userName}!`);
+      printNotCorrect(userAnswer, correctAnswer, userName);
       return false;
     }
   }

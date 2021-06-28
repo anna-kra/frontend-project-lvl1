@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import { getUserName, printGreeting } from '../src/cli.js';
+import brainGames from '../src/brain-games-functions.js';
 
-const userName = getUserName();
-printGreeting(userName);
+brainGames();

@@ -1,7 +1,9 @@
 import { getRandomInt } from './common-functions.js';
 
 import {
-  question, getUserName, printGreeting, printCongratulations, printCorrect, printDirective,
+  question, getUserName,
+  printGreeting, printGreetingByName, printDirective, printQuestion,
+  printCorrect, printNotCorrect, printCongratulations,
 } from './cli.js';
 
 import directives from './texts.js';
@@ -25,21 +27,24 @@ const isAnswerCorrect = (num, userAnswer) => (
 
 const brainPrime = () => {
   let counter = 0;
+
+  printGreeting();
   const userName = getUserName();
-  printGreeting(userName);
+  printGreetingByName(userName);
   printDirective(directives, 'prime');
 
   for (let i = 1; i <= 3; i += 1) {
     const rundomInt = getRandomInt(200);
+    const correctAnswer = isPrime(rundomInt);
 
-    console.log(`Question: ${rundomInt}`);
+    printQuestion(rundomInt);
     const userAnswer = question('Your answer: ');
 
     if (isAnswerCorrect(rundomInt, userAnswer)) {
       printCorrect();
       counter += 1;
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${isPrime(rundomInt)}'. Let's try again, ${userName}!`);
+      printNotCorrect(userAnswer, correctAnswer, userName);
       return false;
     }
   }
