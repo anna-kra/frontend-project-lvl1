@@ -18,4 +18,6 @@ export const printNotCorrect = (userAnswer, correctAnswer, userName) => (
   console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`)
 );
 
-export const printQuestion = (...param) => console.log(`Question: ${param.join(' ')}`);
+// export const printQuestion = (...param) => console.log(`Question: ${param.join(' ')}`);
+
+export const printQuestion = (arrParam) => console.log(`Question: ${arrParam.join(' ')}`);

@@ -24,7 +24,7 @@ const brainEven = () => {
     const randomInt = getRandomInt(MAX_RANDOM_NUMBER);
     const correctAnswer = isEven(randomInt);
 
-    printQuestion(randomInt);
+    printQuestion([randomInt]);
     const userAnswer = question('Your answer: ');
 
     if (isAnswerCorrect(randomInt, userAnswer)) {

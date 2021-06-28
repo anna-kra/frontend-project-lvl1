@@ -37,7 +37,7 @@ const brainPrime = () => {
     const rundomInt = getRandomInt(200);
     const correctAnswer = isPrime(rundomInt);
 
-    printQuestion(rundomInt);
+    printQuestion([rundomInt]);
     const userAnswer = question('Your answer: ');
 
     if (isAnswerCorrect(rundomInt, userAnswer)) {

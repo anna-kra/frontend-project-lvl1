@@ -48,7 +48,7 @@ const brainProgression = () => {
     progressionQuiz[randomIndex] = '..';
     const progressionQuizPresentation = progressionQuiz.join(' ');
 
-    printQuestion(progressionQuizPresentation);
+    printQuestion([progressionQuizPresentation]);
     const userAnswer = Number(question('Your answer: '));
 
     if (isAnswerCorrect(randomPartInProgression, userAnswer)) {

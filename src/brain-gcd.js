@@ -39,7 +39,8 @@ const brainGcd = () => {
     const rundomInt2 = getRandomInt(MAX_RANDOM_NUMBER);
     const correctAnswer = getBiggestCommonDivider(rundomInt1, rundomInt2);
 
-    printQuestion(rundomInt1, rundomInt2);
+    // console.log(`Question: ${rundomInt1} ${rundomInt2}`);
+    printQuestion([rundomInt1, rundomInt2]);
     const userAnswer = Number(question('Your answer: '));
 
     if (isAnswerCorrect(rundomInt1, rundomInt2, userAnswer)) {

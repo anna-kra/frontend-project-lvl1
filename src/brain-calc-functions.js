@@ -49,7 +49,7 @@ const brainCalc = () => {
     const randomSymbol = getRandomSymbol(['+', '-', '*']);
     const correctAnswer = calculate(randomInt1, randomInt2, randomSymbol);
 
-    printQuestion(randomInt1, randomSymbol, randomInt2);
+    printQuestion([randomInt1, randomSymbol, randomInt2]);
     const userAnswer = Number(question('Your answer: '));
 
     if (isAnswerCorrect(randomInt1, randomInt2, randomSymbol, userAnswer)) {
