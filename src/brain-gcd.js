@@ -1,4 +1,4 @@
-import { getRandomInt, getMinOfTwoNumbers } from './common-functions.js';
+import { getRandomInt, getMaxOfTwoNumbers } from './common-functions.js';
 
 import {
   getUserName, getUserAnswer,
@@ -11,9 +11,10 @@ import directives from './texts.js';
 const MAX_RANDOM_NUMBER = 100;
 
 const getBiggestCommonDivider = (num1, num2) => {
-  const minOfTwoNumbers = getMinOfTwoNumbers(num1, num2);
+  const maxOfTwoNumbers = getMaxOfTwoNumbers(num1, num2);
+  const limit = Math.round(maxOfTwoNumbers / 2);
 
-  for (let i = minOfTwoNumbers; i >= 1; i -= 1) {
+  for (let i = limit; i >= 1; i -= 1) {
     if ((num1 % i === 0) && (num2 % i === 0)) {
       return i;
     }
@@ -40,7 +41,6 @@ const brainGcd = () => {
     const correctAnswer = getBiggestCommonDivider(rundomInt1, rundomInt2);
 
     printQuestion([rundomInt1, rundomInt2]);
-    // const userAnswer = Number(question('Your answer: '));
     const userAnswer = Number(getUserAnswer());
 
     if (isAnswerCorrect(rundomInt1, rundomInt2, userAnswer)) {

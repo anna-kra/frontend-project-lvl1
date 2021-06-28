@@ -4,4 +4,4 @@ export const isEven = (num) => ((num % 2 === 0) ? 'yes' : 'no');
 
 export const getIntBetween = (min, max) => min + Math.floor(Math.random() * (max - min));
 
-export const getMinOfTwoNumbers = (num1, num2) => (num1 < num2 ? num1 : num2);
+export const getMaxOfTwoNumbers = (num1, num2) => (num1 > num2 ? num1 : num2);
