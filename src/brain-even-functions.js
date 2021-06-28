@@ -1,7 +1,7 @@
 import { getRandomInt, isEven } from './common-functions.js';
 
 import {
-  question, getUserName,
+  getUserName, getUserAnswer,
   printGreeting, printGreetingByName, printDirective, printQuestion,
   printCorrect, printNotCorrect, printCongratulations,
 } from './cli.js';
@@ -25,7 +25,7 @@ const brainEven = () => {
     const correctAnswer = isEven(randomInt);
 
     printQuestion([randomInt]);
-    const userAnswer = question('Your answer: ');
+    const userAnswer = getUserAnswer();
 
     if (isAnswerCorrect(randomInt, userAnswer)) {
       printCorrect();

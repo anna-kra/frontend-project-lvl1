@@ -1,7 +1,7 @@
 import { getRandomInt } from './common-functions.js';
 
 import {
-  question, getUserName,
+  getUserName, getUserAnswer,
   printGreeting, printGreetingByName, printDirective, printQuestion,
   printCorrect, printNotCorrect, printCongratulations,
 } from './cli.js';
@@ -50,7 +50,7 @@ const brainCalc = () => {
     const correctAnswer = calculate(randomInt1, randomInt2, randomSymbol);
 
     printQuestion([randomInt1, randomSymbol, randomInt2]);
-    const userAnswer = Number(question('Your answer: '));
+    const userAnswer = Number(getUserAnswer());
 
     if (isAnswerCorrect(randomInt1, randomInt2, randomSymbol, userAnswer)) {
       printCorrect();

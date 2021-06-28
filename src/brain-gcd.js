@@ -1,7 +1,7 @@
 import { getRandomInt, getMinOfTwoNumbers } from './common-functions.js';
 
 import {
-  question, getUserName,
+  getUserName, getUserAnswer,
   printGreeting, printGreetingByName, printDirective, printQuestion,
   printCorrect, printNotCorrect, printCongratulations,
 } from './cli.js';
@@ -39,9 +39,9 @@ const brainGcd = () => {
     const rundomInt2 = getRandomInt(MAX_RANDOM_NUMBER);
     const correctAnswer = getBiggestCommonDivider(rundomInt1, rundomInt2);
 
-    // console.log(`Question: ${rundomInt1} ${rundomInt2}`);
     printQuestion([rundomInt1, rundomInt2]);
-    const userAnswer = Number(question('Your answer: '));
+    // const userAnswer = Number(question('Your answer: '));
+    const userAnswer = Number(getUserAnswer());
 
     if (isAnswerCorrect(rundomInt1, rundomInt2, userAnswer)) {
       printCorrect();

@@ -1,7 +1,7 @@
 import { getRandomInt } from './common-functions.js';
 
 import {
-  question, getUserName,
+  getUserName, getUserAnswer,
   printGreeting, printGreetingByName, printDirective, printQuestion,
   printCorrect, printNotCorrect, printCongratulations,
 } from './cli.js';
@@ -38,7 +38,7 @@ const brainPrime = () => {
     const correctAnswer = isPrime(rundomInt);
 
     printQuestion([rundomInt]);
-    const userAnswer = question('Your answer: ');
+    const userAnswer = getUserAnswer();
 
     if (isAnswerCorrect(rundomInt, userAnswer)) {
       printCorrect();

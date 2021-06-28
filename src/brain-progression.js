@@ -1,7 +1,7 @@
 import { getRandomInt, getIntBetween } from './common-functions.js';
 
 import {
-  question, getUserName,
+  getUserName, getUserAnswer,
   printGreeting, printGreetingByName, printDirective, printQuestion,
   printCorrect, printNotCorrect, printCongratulations,
 } from './cli.js';
@@ -49,7 +49,7 @@ const brainProgression = () => {
     const progressionQuizPresentation = progressionQuiz.join(' ');
 
     printQuestion([progressionQuizPresentation]);
-    const userAnswer = Number(question('Your answer: '));
+    const userAnswer = Number(getUserAnswer());
 
     if (isAnswerCorrect(randomPartInProgression, userAnswer)) {
       printCorrect();

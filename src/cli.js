@@ -4,6 +4,8 @@ export const question = (text) => readlineSync.question(text);
 
 export const getUserName = () => question('May I have your name? ');
 
+export const getUserAnswer = () => question('Your answer: ');
+
 export const printGreetingByName = (userName) => console.log(`Hello, ${userName}!`);
 
 export const printGreeting = () => console.log('Welcome to the Brain Games!');
@@ -17,7 +19,5 @@ export const printDirective = (obj, prop) => console.log(obj[prop]);
 export const printNotCorrect = (userAnswer, correctAnswer, userName) => (
   console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`)
 );
-
-// export const printQuestion = (...param) => console.log(`Question: ${param.join(' ')}`);
 
 export const printQuestion = (arrParam) => console.log(`Question: ${arrParam.join(' ')}`);
