@@ -6,7 +6,7 @@ import {
   printCorrect, printNotCorrect, printCongratulations,
 } from './cli.js';
 
-import directives from './texts.js';
+const DIRECTIVE_EVEN = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const MAX_RANDOM_NUMBER = 1000;
 
@@ -18,7 +18,7 @@ const startBrainEven = () => {
   printGreeting();
   const userName = getUserName();
   printGreetingByName(userName);
-  printDirective(directives, 'even');
+  printDirective(DIRECTIVE_EVEN);
 
   for (let i = 1; i <= 3; i += 1) {
     const randomInt = getRandomInt(MAX_RANDOM_NUMBER);

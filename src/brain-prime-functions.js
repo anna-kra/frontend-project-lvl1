@@ -6,7 +6,7 @@ import {
   printCorrect, printNotCorrect, printCongratulations,
 } from './cli.js';
 
-import directives from './texts.js';
+const DIRECTIVE_PRIME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   let numIsPrime = 'yes';
@@ -31,7 +31,7 @@ const startBrainPrime = () => {
   printGreeting();
   const userName = getUserName();
   printGreetingByName(userName);
-  printDirective(directives, 'prime');
+  printDirective(DIRECTIVE_PRIME);
 
   for (let i = 1; i <= 3; i += 1) {
     const rundomInt = getRandomInt(200);

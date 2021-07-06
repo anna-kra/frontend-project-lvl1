@@ -6,7 +6,7 @@ import {
   printCorrect, printNotCorrect, printCongratulations,
 } from './cli.js';
 
-import directives from './texts.js';
+const DIRECTIVE_GCD = 'Find the greatest common divisor of given numbers.';
 
 const MAX_RANDOM_NUMBER = 100;
 
@@ -33,7 +33,7 @@ const startBrainGcd = () => {
   printGreeting();
   const userName = getUserName();
   printGreetingByName(userName);
-  printDirective(directives, 'gcd');
+  printDirective(DIRECTIVE_GCD);
 
   for (let i = 1; i <= 3; i += 1) {
     const rundomInt1 = getRandomInt(MAX_RANDOM_NUMBER);

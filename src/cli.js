@@ -14,7 +14,7 @@ export const printCongratulations = (userName) => console.log(`Congratulations, 
 
 export const printCorrect = () => console.log('Correct!');
 
-export const printDirective = (obj, prop) => console.log(obj[prop]);
+export const printDirective = (text) => console.log(text);
 
 export const printNotCorrect = (userAnswer, correctAnswer, userName) => (
   console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`)

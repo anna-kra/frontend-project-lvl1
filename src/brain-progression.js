@@ -6,7 +6,7 @@ import {
   printCorrect, printNotCorrect, printCongratulations,
 } from './cli.js';
 
-import directives from './texts.js';
+const DIRECTIVE_PROGRESSION = 'What number is missing in the progression?';
 
 const MAX_START_IN_PROGRESSION = 100;
 const MAX_STEP_IN_PROGRESSION = 10;
@@ -36,7 +36,7 @@ const startBrainProgression = () => {
   printGreeting();
   const userName = getUserName();
   printGreetingByName(userName);
-  printDirective(directives, 'progression');
+  printDirective(DIRECTIVE_PROGRESSION);
 
   for (let i = 1; i <= 3; i += 1) {
     const progression = generateProgression();

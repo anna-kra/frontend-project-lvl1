@@ -6,7 +6,7 @@ import {
   printCorrect, printNotCorrect, printCongratulations,
 } from './cli.js';
 
-import directives from './texts.js';
+const DIRECTIVE_CALC = 'What is the result of the expression?';
 
 const MAX_RANDOM_NUMBER = 10;
 
@@ -41,7 +41,7 @@ const startBrainCalc = () => {
   printGreeting();
   const userName = getUserName();
   printGreetingByName(userName);
-  printDirective(directives, 'calc');
+  printDirective(DIRECTIVE_CALC);
 
   for (let i = 1; i <= 3; i += 1) {
     const randomInt1 = getRandomInt(MAX_RANDOM_NUMBER);
