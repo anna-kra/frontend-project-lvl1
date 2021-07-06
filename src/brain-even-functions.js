@@ -1,4 +1,4 @@
-import { getRandomInt, isEven } from './common.js';
+import { getRandomInt } from './common.js';
 
 import {
   getUserName, getUserAnswer,
@@ -9,6 +9,8 @@ import {
 const DIRECTIVE_EVEN = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const MAX_RANDOM_NUMBER = 1000;
+
+const isEven = (num) => ((num % 2 === 0) ? 'yes' : 'no');
 
 const isAnswerCorrect = (randomInt, userAnswer) => isEven(randomInt) === userAnswer;
 
