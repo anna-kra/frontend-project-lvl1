@@ -35,7 +35,7 @@ const isAnswerCorrect = (randomInt1, randomInt2, randomSymbol, userAnswer) => (
   calculate(randomInt1, randomInt2, randomSymbol) === userAnswer
 );
 
-const brainCalc = () => {
+const startBrainCalc = () => {
   let counter = 0;
 
   printGreeting();
@@ -66,4 +66,4 @@ const brainCalc = () => {
   return true;
 };
 
-export default brainCalc;
+export default startBrainCalc;

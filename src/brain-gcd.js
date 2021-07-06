@@ -27,7 +27,7 @@ const isAnswerCorrect = (num1, num2, userAnswer) => (
   getBiggestCommonDivider(num1, num2) === userAnswer
 );
 
-const brainGcd = () => {
+const startBrainGcd = () => {
   let counter = 0;
 
   printGreeting();
@@ -58,4 +58,4 @@ const brainGcd = () => {
   return true;
 };
 
-export default brainGcd;
+export default startBrainGcd;

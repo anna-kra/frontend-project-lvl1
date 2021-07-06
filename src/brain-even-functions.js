@@ -12,7 +12,7 @@ const MAX_RANDOM_NUMBER = 1000;
 
 const isAnswerCorrect = (randomInt, userAnswer) => isEven(randomInt) === userAnswer;
 
-const brainEven = () => {
+const startBrainEven = () => {
   let counter = 0;
 
   printGreeting();
@@ -41,4 +41,4 @@ const brainEven = () => {
   return true;
 };
 
-export default brainEven;
+export default startBrainEven;

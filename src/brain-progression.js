@@ -30,7 +30,7 @@ const isAnswerCorrect = (randomPartInProgression, userAnswer) => (
   randomPartInProgression === userAnswer
 );
 
-const brainProgression = () => {
+const startBrainProgression = () => {
   let counter = 0;
 
   printGreeting();
@@ -65,4 +65,4 @@ const brainProgression = () => {
   return true;
 };
 
-export default brainProgression;
+export default startBrainProgression;

@@ -25,7 +25,7 @@ const isAnswerCorrect = (num, userAnswer) => (
   (isPrime(num) === 'yes' && userAnswer === 'yes') || (isPrime(num) === 'no' && userAnswer === 'no')
 );
 
-const brainPrime = () => {
+const startBrainPrime = () => {
   let counter = 0;
 
   printGreeting();
@@ -55,4 +55,4 @@ const brainPrime = () => {
   return true;
 };
 
-export default brainPrime;
+export default startBrainPrime;
