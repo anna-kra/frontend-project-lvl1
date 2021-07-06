@@ -1,4 +1,4 @@
-import { getRandomInt } from './common-functions.js';
+import { getRandomInt } from './common.js';
 
 import {
   getUserName, getUserAnswer,

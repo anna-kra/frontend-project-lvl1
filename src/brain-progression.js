@@ -1,4 +1,4 @@
-import { getRandomInt, getIntBetween } from './common-functions.js';
+import { getRandomInt, getIntBetween } from './common.js';
 
 import {
   getUserName, getUserAnswer,

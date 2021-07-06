@@ -1,4 +1,4 @@
-import { getRandomInt, isEven } from './common-functions.js';
+import { getRandomInt, isEven } from './common.js';
 
 import {
   getUserName, getUserAnswer,

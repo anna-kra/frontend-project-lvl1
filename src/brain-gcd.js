@@ -1,4 +1,4 @@
-import { getRandomInt, getMaxOfTwoNumbers } from './common-functions.js';
+import { getRandomInt, getMaxOfTwoNumbers } from './common.js';
 
 import {
   getUserName, getUserAnswer,
