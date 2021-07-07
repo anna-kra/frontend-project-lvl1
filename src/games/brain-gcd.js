@@ -30,8 +30,6 @@ const isAnswerCorrect = (num1, num2, userAnswer) => (
 );
 
 const startBrainGcd = () => {
-  let counter = 0;
-
   printGreeting();
   const userName = getUserName();
   printGreetingByName(userName);
@@ -47,16 +45,16 @@ const startBrainGcd = () => {
 
     if (isAnswerCorrect(rundomInt1, rundomInt2, userAnswer)) {
       printCorrect();
-      counter += 1;
     } else {
       printNotCorrect(userAnswer, correctAnswer, userName);
       return false;
     }
+
+    if (i === 3) {
+      printCongratulations(userName);
+    }
   }
 
-  if (counter === 3) {
-    printCongratulations(userName);
-  }
   return true;
 };
 
