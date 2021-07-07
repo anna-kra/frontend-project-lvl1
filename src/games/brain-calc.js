@@ -10,6 +10,8 @@ const DIRECTIVE_CALC = 'What is the result of the expression?';
 
 const MAX_RANDOM_NUMBER = 10;
 
+const GAME_ROUNDS = 3;
+
 const getRandomSymbol = (arrSymbols) => arrSymbols[getRandomInt(arrSymbols.length - 1)];
 
 const calculate = (num1, num2, symbol) => {
@@ -43,7 +45,7 @@ const startBrainCalc = () => {
   printGreetingByName(userName);
   printDirective(DIRECTIVE_CALC);
 
-  for (let i = 1; i <= 3; i += 1) {
+  for (let i = 1; i <= GAME_ROUNDS; i += 1) {
     const randomInt1 = getRandomInt(MAX_RANDOM_NUMBER);
     const randomInt2 = getRandomInt(MAX_RANDOM_NUMBER);
     const randomSymbol = getRandomSymbol(['+', '-', '*']);

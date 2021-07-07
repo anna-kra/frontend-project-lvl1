@@ -10,6 +10,8 @@ const DIRECTIVE_GCD = 'Find the greatest common divisor of given numbers.';
 
 const MAX_RANDOM_NUMBER = 100;
 
+const GAME_ROUNDS = 3;
+
 const getBiggestCommonDivider = (num1, num2) => {
   const maxOfTwoNumbers = Math.max(num1, num2);
   const limit = Math.round(maxOfTwoNumbers / 2);
@@ -35,7 +37,7 @@ const startBrainGcd = () => {
   printGreetingByName(userName);
   printDirective(DIRECTIVE_GCD);
 
-  for (let i = 1; i <= 3; i += 1) {
+  for (let i = 1; i <= GAME_ROUNDS; i += 1) {
     const rundomInt1 = getRandomInt(MAX_RANDOM_NUMBER);
     const rundomInt2 = getRandomInt(MAX_RANDOM_NUMBER);
     const correctAnswer = getBiggestCommonDivider(rundomInt1, rundomInt2);

@@ -12,6 +12,7 @@ const MAX_START_IN_PROGRESSION = 100;
 const MAX_STEP_IN_PROGRESSION = 10;
 const MIN_LENGTH_OF_PROGRESSION = 5;
 const MAX_LENGTH_OF_PROGRESSION = 10;
+const GAME_ROUNDS = 3;
 
 const getIntBetween = (min, max) => min + Math.floor(Math.random() * (max - min));
 
@@ -40,7 +41,7 @@ const startBrainProgression = () => {
   printGreetingByName(userName);
   printDirective(DIRECTIVE_PROGRESSION);
 
-  for (let i = 1; i <= 3; i += 1) {
+  for (let i = 1; i <= GAME_ROUNDS; i += 1) {
     const progression = generateProgression();
     const randomIndex = getIntBetween(0, progression.length - 1);
     const randomPartInProgression = progression[randomIndex];

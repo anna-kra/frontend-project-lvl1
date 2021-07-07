@@ -8,6 +8,8 @@ import {
 
 const DIRECTIVE_PRIME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
+const GAME_ROUNDS = 3;
+
 const isPrime = (num) => {
   let numIsPrime = 'yes';
 
@@ -33,7 +35,7 @@ const startBrainPrime = () => {
   printGreetingByName(userName);
   printDirective(DIRECTIVE_PRIME);
 
-  for (let i = 1; i <= 3; i += 1) {
+  for (let i = 1; i <= GAME_ROUNDS; i += 1) {
     const rundomInt = getRandomInt(200);
     const correctAnswer = isPrime(rundomInt);
 
