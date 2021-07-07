@@ -1,4 +1,4 @@
-import { getRandomInt, getIntBetween } from './common.js';
+import getRandomInt from './common.js';
 
 import {
   getUserName, getUserAnswer,
@@ -12,6 +12,8 @@ const MAX_START_IN_PROGRESSION = 100;
 const MAX_STEP_IN_PROGRESSION = 10;
 const MIN_LENGTH_OF_PROGRESSION = 5;
 const MAX_LENGTH_OF_PROGRESSION = 10;
+
+const getIntBetween = (min, max) => min + Math.floor(Math.random() * (max - min));
 
 const generateProgression = () => {
   const start = getRandomInt(MAX_START_IN_PROGRESSION);
