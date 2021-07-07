@@ -1,4 +1,4 @@
-import { getRandomInt, getMaxOfTwoNumbers } from './common.js';
+import { getRandomInt } from './common.js';
 
 import {
   getUserName, getUserAnswer,
@@ -11,7 +11,7 @@ const DIRECTIVE_GCD = 'Find the greatest common divisor of given numbers.';
 const MAX_RANDOM_NUMBER = 100;
 
 const getBiggestCommonDivider = (num1, num2) => {
-  const maxOfTwoNumbers = getMaxOfTwoNumbers(num1, num2);
+  const maxOfTwoNumbers = Math.max(num1, num2);
   const limit = Math.round(maxOfTwoNumbers / 2);
 
   for (let i = limit; i >= 1; i -= 1) {
