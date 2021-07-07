@@ -34,8 +34,6 @@ const isAnswerCorrect = (randomPartInProgression, userAnswer) => (
 );
 
 const startBrainProgression = () => {
-  let counter = 0;
-
   printGreeting();
   const userName = getUserName();
   printGreetingByName(userName);
@@ -56,15 +54,16 @@ const startBrainProgression = () => {
 
     if (isAnswerCorrect(randomPartInProgression, userAnswer)) {
       printCorrect();
-      counter += 1;
     } else {
       printNotCorrect(userAnswer, correctAnswer, userName);
       return false;
     }
+
+    if (i === 3) {
+      printCongratulations(userName);
+    }
   }
-  if (counter === 3) {
-    printCongratulations(userName);
-  }
+
   return true;
 };
 
