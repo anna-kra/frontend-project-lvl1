@@ -28,8 +28,6 @@ const isAnswerCorrect = (num, userAnswer) => (
 );
 
 const startBrainPrime = () => {
-  let counter = 0;
-
   printGreeting();
   const userName = getUserName();
   printGreetingByName(userName);
@@ -44,16 +42,16 @@ const startBrainPrime = () => {
 
     if (isAnswerCorrect(rundomInt, userAnswer)) {
       printCorrect();
-      counter += 1;
     } else {
       printNotCorrect(userAnswer, correctAnswer, userName);
       return false;
     }
+
+    if (i === 3) {
+      printCongratulations(userName);
+    }
   }
 
-  if (counter === 3) {
-    printCongratulations(userName);
-  }
   return true;
 };
 
