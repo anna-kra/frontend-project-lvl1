@@ -38,8 +38,6 @@ const isAnswerCorrect = (randomInt1, randomInt2, randomSymbol, userAnswer) => (
 );
 
 const startBrainCalc = () => {
-  let counter = 0;
-
   printGreeting();
   const userName = getUserName();
   printGreetingByName(userName);
@@ -56,14 +54,14 @@ const startBrainCalc = () => {
 
     if (isAnswerCorrect(randomInt1, randomInt2, randomSymbol, userAnswer)) {
       printCorrect();
-      counter += 1;
     } else {
       printNotCorrect(userAnswer, correctAnswer, userName);
       return false;
     }
-  }
-  if (counter === 3) {
-    printCongratulations(userName);
+
+    if (i === 3) {
+      printCongratulations(userName);
+    }
   }
   return true;
 };
