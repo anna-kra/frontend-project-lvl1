@@ -1,10 +1,10 @@
-import getRandomInt from './common.js';
+import getRandomInt from '../common.js';
 
 import {
   getUserName, getUserAnswer,
   printGreeting, printGreetingByName, printDirective, printQuestion,
   printCorrect, printNotCorrect, printCongratulations,
-} from './cli.js';
+} from '../cli.js';
 
 const DIRECTIVE_CALC = 'What is the result of the expression?';
 
