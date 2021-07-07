@@ -31,8 +31,6 @@ const getAnswerCorrect = (randomInt) => {
 };
 
 const startBrainEven = () => {
-  let counter = 0;
-
   printGreeting();
   const userName = getUserName();
   printGreetingByName(userName);
@@ -40,21 +38,20 @@ const startBrainEven = () => {
 
   for (let i = 1; i <= GAME_ROUNDS; i += 1) {
     const randomInt = getRandomInt(MAX_RANDOM_NUMBER);
-
     printQuestion([randomInt]);
     const userAnswer = getUserAnswer();
     const correctAnswer = getAnswerCorrect(randomInt, userAnswer);
 
     if (isAnswerCorrect(randomInt, userAnswer)) {
       printCorrect();
-      counter += 1;
     } else {
       printNotCorrect(userAnswer, correctAnswer, userName);
       return false;
     }
-  }
-  if (counter === 3) {
-    printCongratulations(userName);
+
+    if (i === 3) {
+      printCongratulations(userName);
+    }
   }
   return true;
 };
