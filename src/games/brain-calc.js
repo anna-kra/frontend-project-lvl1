@@ -3,7 +3,7 @@ import getRandomInt from '../common.js';
 import {
   printQuestion,
   greetUser,
-  question,
+  askQuestion,
 } from '../cli.js';
 
 const DIRECTIVE_CALC = 'What is the result of the expression?';
@@ -45,7 +45,7 @@ const startBrainCalc = () => {
     const correctAnswer = calculate(randomInt1, randomInt2, randomSymbol);
 
     printQuestion([randomInt1, randomSymbol, randomInt2]);
-    const userAnswer = Number(question(YOUR_ANSWER));
+    const userAnswer = Number(askQuestion(YOUR_ANSWER));
 
     if (correctAnswer !== userAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);

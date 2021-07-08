@@ -1,9 +1,9 @@
 import getRandomInt from '../common.js';
 
 import {
-  getUserAnswer,
   printQuestion,
   greetUser,
+  askQuestion,
 } from '../cli.js';
 
 const DIRECTIVE_GCD = 'Find the greatest common divisor of given numbers.';
@@ -11,6 +11,7 @@ const MAX_RANDOM_NUMBER = 100;
 const GAME_ROUNDS = 3;
 const CONGRATULATIONS = 'Congratulations';
 const ANSWER_CORRECT = 'Correct!';
+const YOUR_ANSWER = 'Your answer: ';
 
 const getBiggestCommonDivider = (num1, num2) => {
   const maxOfTwoNumbers = Math.max(num1, num2);
@@ -35,7 +36,7 @@ const startBrainGcd = () => {
     const correctAnswer = getBiggestCommonDivider(rundomInt1, rundomInt2);
 
     printQuestion([rundomInt1, rundomInt2]);
-    const userAnswer = Number(getUserAnswer());
+    const userAnswer = Number(askQuestion(YOUR_ANSWER));
 
     if (correctAnswer !== userAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);

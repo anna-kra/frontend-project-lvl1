@@ -1,9 +1,9 @@
 import getRandomInt from '../common.js';
 
 import {
-  getUserAnswer,
   printQuestion,
   greetUser,
+  askQuestion,
 } from '../cli.js';
 
 const DIRECTIVE_PROGRESSION = 'What number is missing in the progression?';
@@ -15,6 +15,7 @@ const MAX_LENGTH_OF_PROGRESSION = 10;
 const GAME_ROUNDS = 3;
 const CONGRATULATIONS = 'Congratulations';
 const ANSWER_CORRECT = 'Correct!';
+const YOUR_ANSWER = 'Your answer: ';
 
 const getIntBetween = (min, max) => min + Math.floor(Math.random() * (max - min));
 
@@ -46,7 +47,7 @@ const startBrainProgression = () => {
     const progressionQuizPresentation = progressionQuiz.join(' ');
 
     printQuestion([progressionQuizPresentation]);
-    const userAnswer = Number(getUserAnswer());
+    const userAnswer = Number(askQuestion(YOUR_ANSWER));
 
     if (correctAnswer !== userAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);

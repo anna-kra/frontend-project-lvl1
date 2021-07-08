@@ -1,15 +1,16 @@
 import getRandomInt from '../common.js';
 
 import {
-  getUserAnswer,
   printQuestion,
   greetUser,
+  askQuestion,
 } from '../cli.js';
 
 const DIRECTIVE_PRIME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const GAME_ROUNDS = 3;
 const CONGRATULATIONS = 'Congratulations';
 const ANSWER_CORRECT = 'Correct!';
+const YOUR_ANSWER = 'Your answer: ';
 
 const isPrime = (num) => {
   let numIsPrime = true;
@@ -43,7 +44,7 @@ const startBrainPrime = () => {
     const rundomInt = getRandomInt(200);
 
     printQuestion([rundomInt]);
-    const userAnswer = getUserAnswer();
+    const userAnswer = askQuestion(YOUR_ANSWER);
     const correctAnswer = getCorrectAnswer(rundomInt, userAnswer);
 
     if (correctAnswer !== userAnswer) {
