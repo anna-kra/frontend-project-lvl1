@@ -33,10 +33,6 @@ const calculate = (num1, num2, symbol) => {
   return result;
 };
 
-const isAnswerCorrect = (randomInt1, randomInt2, randomSymbol, userAnswer) => (
-  calculate(randomInt1, randomInt2, randomSymbol) === userAnswer
-);
-
 const startBrainCalc = () => {
   printGreeting();
   const userName = getUserName();
@@ -52,7 +48,7 @@ const startBrainCalc = () => {
     printQuestion([randomInt1, randomSymbol, randomInt2]);
     const userAnswer = Number(getUserAnswer());
 
-    if (isAnswerCorrect(randomInt1, randomInt2, randomSymbol, userAnswer)) {
+    if (correctAnswer === userAnswer) {
       printCorrect();
     } else {
       printNotCorrect(userAnswer, correctAnswer, userName);
