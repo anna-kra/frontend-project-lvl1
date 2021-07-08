@@ -7,9 +7,7 @@ import {
 } from '../cli.js';
 
 const DIRECTIVE_GCD = 'Find the greatest common divisor of given numbers.';
-
 const MAX_RANDOM_NUMBER = 100;
-
 const GAME_ROUNDS = 3;
 
 const getBiggestCommonDivider = (num1, num2) => {
@@ -25,10 +23,6 @@ const getBiggestCommonDivider = (num1, num2) => {
   return 1;
 };
 
-const isAnswerCorrect = (num1, num2, userAnswer) => (
-  getBiggestCommonDivider(num1, num2) === userAnswer
-);
-
 const startBrainGcd = () => {
   printGreeting();
   const userName = getUserName();
@@ -43,7 +37,7 @@ const startBrainGcd = () => {
     printQuestion([rundomInt1, rundomInt2]);
     const userAnswer = Number(getUserAnswer());
 
-    if (isAnswerCorrect(rundomInt1, rundomInt2, userAnswer)) {
+    if (correctAnswer === userAnswer) {
       printCorrect();
     } else {
       printNotCorrect(userAnswer, correctAnswer, userName);
