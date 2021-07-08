@@ -10,7 +10,7 @@ const DIRECTIVE_GCD = 'Find the greatest common divisor of given numbers.';
 const MAX_RANDOM_NUMBER = 100;
 const GAME_ROUNDS = 3;
 const CONGRATULATIONS = 'Congratulations';
-const ANSWER_CORRECT_TEST = 'Correct!';
+const ANSWER_CORRECT = 'Correct!';
 const YOUR_ANSWER = 'Your answer: ';
 
 const getBiggestCommonDivider = (num1, num2) => {
@@ -43,7 +43,7 @@ const startBrainGcd = () => {
       return false;
     }
 
-    console.log(ANSWER_CORRECT_TEST);
+    console.log(ANSWER_CORRECT);
   }
   console.log(`${CONGRATULATIONS}, ${userName}!`);
   return true;
