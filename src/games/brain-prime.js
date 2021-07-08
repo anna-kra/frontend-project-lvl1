@@ -7,7 +7,6 @@ import {
 } from '../cli.js';
 
 const DIRECTIVE_PRIME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
 const GAME_ROUNDS = 3;
 
 const isPrime = (num) => {
@@ -46,12 +45,8 @@ const startBrainPrime = () => {
       printNotCorrect(userAnswer, correctAnswer, userName);
       return false;
     }
-
-    if (i === 3) {
-      printCongratulations(userName);
-    }
   }
-
+  printCongratulations(userName);
   return true;
 };
 

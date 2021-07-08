@@ -54,12 +54,8 @@ const startBrainProgression = () => {
       printNotCorrect(userAnswer, correctAnswer, userName);
       return false;
     }
-
-    if (i === 3) {
-      printCongratulations(userName);
-    }
   }
-
+  printCongratulations(userName);
   return true;
 };
 
