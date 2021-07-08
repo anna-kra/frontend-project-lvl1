@@ -1,9 +1,3 @@
-import { getUserName, printGreeting, printGreetingByName } from '../cli.js';
+import { startBrainGames } from '../cli.js';
 
-const startBrainGames = () => {
-  printGreeting();
-  const userName = getUserName();
-  printGreetingByName(userName);
-};
-
-export default startBrainGames;
+startBrainGames();
