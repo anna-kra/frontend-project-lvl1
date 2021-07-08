@@ -1,9 +1,10 @@
 import getRandomInt from '../common.js';
 
 import {
-  getUserName, getUserAnswer,
-  printGreeting, printGreetingByName, printDirective, printQuestion,
+  getUserAnswer,
+  printDirective, printQuestion,
   printCorrect, printNotCorrect, printCongratulations,
+  startGame,
 } from '../cli.js';
 
 const DIRECTIVE_GCD = 'Find the greatest common divisor of given numbers.';
@@ -24,9 +25,7 @@ const getBiggestCommonDivider = (num1, num2) => {
 };
 
 const startBrainGcd = () => {
-  printGreeting();
-  const userName = getUserName();
-  printGreetingByName(userName);
+  const userName = startGame();
   printDirective(DIRECTIVE_GCD);
 
   for (let i = 1; i <= GAME_ROUNDS; i += 1) {

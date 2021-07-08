@@ -1,9 +1,10 @@
 import getRandomInt from '../common.js';
 
 import {
-  getUserName, getUserAnswer,
-  printGreeting, printGreetingByName, printDirective, printQuestion,
+  getUserAnswer,
+  printDirective, printQuestion,
   printCorrect, printNotCorrect, printCongratulations,
+  startGame,
 } from '../cli.js';
 
 const DIRECTIVE_EVEN = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -25,9 +26,7 @@ const getCorrectAnswer = (randomInt) => {
 };
 
 const startBrainEven = () => {
-  printGreeting();
-  const userName = getUserName();
-  printGreetingByName(userName);
+  const userName = startGame();
   printDirective(DIRECTIVE_EVEN);
 
   for (let i = 1; i <= GAME_ROUNDS; i += 1) {

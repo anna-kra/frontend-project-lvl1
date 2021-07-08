@@ -1,9 +1,10 @@
 import getRandomInt from '../common.js';
 
 import {
-  getUserName, getUserAnswer,
-  printGreeting, printGreetingByName, printDirective, printQuestion,
+  getUserAnswer,
+  printDirective, printQuestion,
   printCorrect, printNotCorrect, printCongratulations,
+  startGame,
 } from '../cli.js';
 
 const DIRECTIVE_CALC = 'What is the result of the expression?';
@@ -32,9 +33,7 @@ const calculate = (num1, num2, symbol) => {
 };
 
 const startBrainCalc = () => {
-  printGreeting();
-  const userName = getUserName();
-  printGreetingByName(userName);
+  const userName = startGame();
   printDirective(DIRECTIVE_CALC);
 
   for (let i = 1; i <= GAME_ROUNDS; i += 1) {

@@ -1,3 +1,3 @@
-import { startBrainGames } from '../cli.js';
+import { startGame } from '../cli.js';
 
-startBrainGames();
+startGame();

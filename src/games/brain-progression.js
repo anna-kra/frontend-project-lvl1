@@ -1,9 +1,10 @@
 import getRandomInt from '../common.js';
 
 import {
-  getUserName, getUserAnswer,
-  printGreeting, printGreetingByName, printDirective, printQuestion,
+  getUserAnswer,
+  printDirective, printQuestion,
   printCorrect, printNotCorrect, printCongratulations,
+  startGame,
 } from '../cli.js';
 
 const DIRECTIVE_PROGRESSION = 'What number is missing in the progression?';
@@ -30,9 +31,7 @@ const generateProgression = () => {
 };
 
 const startBrainProgression = () => {
-  printGreeting();
-  const userName = getUserName();
-  printGreetingByName(userName);
+  const userName = startGame();
   printDirective(DIRECTIVE_PROGRESSION);
 
   for (let i = 1; i <= GAME_ROUNDS; i += 1) {

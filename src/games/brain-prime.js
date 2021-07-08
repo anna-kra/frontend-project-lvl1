@@ -1,9 +1,10 @@
 import getRandomInt from '../common.js';
 
 import {
-  getUserName, getUserAnswer,
-  printGreeting, printGreetingByName, printDirective, printQuestion,
+  getUserAnswer,
+  printDirective, printQuestion,
   printCorrect, printNotCorrect, printCongratulations,
+  startGame,
 } from '../cli.js';
 
 const DIRECTIVE_PRIME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -34,9 +35,7 @@ const getCorrectAnswer = (num, userAnswer) => {
 };
 
 const startBrainPrime = () => {
-  printGreeting();
-  const userName = getUserName();
-  printGreetingByName(userName);
+  const userName = startGame();
   printDirective(DIRECTIVE_PRIME);
 
   for (let i = 1; i <= GAME_ROUNDS; i += 1) {

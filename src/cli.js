@@ -22,8 +22,9 @@ export const printNotCorrect = (userAnswer, correctAnswer, userName) => (
 
 export const printQuestion = (arrParam) => console.log(`Question: ${arrParam.join(' ')}`);
 
-export const startBrainGames = () => {
+export const startGame = () => {
   printGreeting();
   const userName = getUserName();
   printGreetingByName(userName);
+  return userName;
 };
