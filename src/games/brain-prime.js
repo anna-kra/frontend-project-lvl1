@@ -46,7 +46,7 @@ const startBrainPrime = () => {
     const userAnswer = getUserAnswer();
     const correctAnswer = getCorrectAnswer(rundomInt, userAnswer);
 
-    if (correctAnswer === userAnswer) {
+    if (correctAnswer !== userAnswer) {
       printNotCorrect(userAnswer, correctAnswer, userName);
       return false;
     }
