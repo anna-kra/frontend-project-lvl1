@@ -1,9 +1,9 @@
 import getRandomInt from '../common.js';
 
 import {
-  getUserAnswer,
   printQuestion,
   greetUser,
+  question,
 } from '../cli.js';
 
 const DIRECTIVE_CALC = 'What is the result of the expression?';
@@ -11,6 +11,7 @@ const MAX_RANDOM_NUMBER = 10;
 const GAME_ROUNDS = 3;
 const CONGRATULATIONS = 'Congratulations';
 const ANSWER_CORRECT = 'Correct!';
+const YOUR_ANSWER = 'Your answer: ';
 
 const getRandomSymbol = (arrSymbols) => arrSymbols[getRandomInt(arrSymbols.length - 1)];
 
@@ -44,7 +45,7 @@ const startBrainCalc = () => {
     const correctAnswer = calculate(randomInt1, randomInt2, randomSymbol);
 
     printQuestion([randomInt1, randomSymbol, randomInt2]);
-    const userAnswer = Number(getUserAnswer());
+    const userAnswer = Number(question(YOUR_ANSWER));
 
     if (correctAnswer !== userAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);

@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 export const question = (text) => readlineSync.question(text);
 
-export const getUserAnswer = () => question('Your answer: ');
+// export const getUserAnswer = () => question('Your answer: ');
 
 export const printQuestion = (arrParam) => console.log(`Question: ${arrParam.join(' ')}`);
 
