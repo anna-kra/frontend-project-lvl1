@@ -48,7 +48,7 @@ const startBrainProgression = () => {
     printQuestion([progressionQuizPresentation]);
     const userAnswer = Number(getUserAnswer());
 
-    if (correctAnswer === userAnswer) {
+    if (correctAnswer !== userAnswer) {
       printNotCorrect(userAnswer, correctAnswer, userName);
       return false;
     }
