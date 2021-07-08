@@ -4,7 +4,7 @@ import {
   getUserAnswer,
   printDirective, printQuestion,
   printCorrect, printNotCorrect, printCongratulations,
-  startGame,
+  greetUser,
 } from '../cli.js';
 
 const DIRECTIVE_EVEN = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -26,7 +26,7 @@ const getCorrectAnswer = (randomInt) => {
 };
 
 const startBrainEven = () => {
-  const userName = startGame();
+  const userName = greetUser();
   printDirective(DIRECTIVE_EVEN);
 
   for (let i = 1; i <= GAME_ROUNDS; i += 1) {

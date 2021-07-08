@@ -4,7 +4,7 @@ import {
   getUserAnswer,
   printDirective, printQuestion,
   printCorrect, printNotCorrect, printCongratulations,
-  startGame,
+  greetUser,
 } from '../cli.js';
 
 const DIRECTIVE_PRIME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -35,7 +35,7 @@ const getCorrectAnswer = (num, userAnswer) => {
 };
 
 const startBrainPrime = () => {
-  const userName = startGame();
+  const userName = greetUser();
   printDirective(DIRECTIVE_PRIME);
 
   for (let i = 1; i <= GAME_ROUNDS; i += 1) {

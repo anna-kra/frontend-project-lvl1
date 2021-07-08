@@ -4,7 +4,7 @@ import {
   getUserAnswer,
   printDirective, printQuestion,
   printCorrect, printNotCorrect, printCongratulations,
-  startGame,
+  greetUser,
 } from '../cli.js';
 
 const DIRECTIVE_CALC = 'What is the result of the expression?';
@@ -33,7 +33,7 @@ const calculate = (num1, num2, symbol) => {
 };
 
 const startBrainCalc = () => {
-  const userName = startGame();
+  const userName = greetUser();
   printDirective(DIRECTIVE_CALC);
 
   for (let i = 1; i <= GAME_ROUNDS; i += 1) {

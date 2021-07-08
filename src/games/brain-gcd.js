@@ -4,7 +4,7 @@ import {
   getUserAnswer,
   printDirective, printQuestion,
   printCorrect, printNotCorrect, printCongratulations,
-  startGame,
+  greetUser,
 } from '../cli.js';
 
 const DIRECTIVE_GCD = 'Find the greatest common divisor of given numbers.';
@@ -25,7 +25,7 @@ const getBiggestCommonDivider = (num1, num2) => {
 };
 
 const startBrainGcd = () => {
-  const userName = startGame();
+  const userName = greetUser();
   printDirective(DIRECTIVE_GCD);
 
   for (let i = 1; i <= GAME_ROUNDS; i += 1) {

@@ -4,7 +4,7 @@ import {
   getUserAnswer,
   printDirective, printQuestion,
   printCorrect, printNotCorrect, printCongratulations,
-  startGame,
+  greetUser,
 } from '../cli.js';
 
 const DIRECTIVE_PROGRESSION = 'What number is missing in the progression?';
@@ -31,7 +31,7 @@ const generateProgression = () => {
 };
 
 const startBrainProgression = () => {
-  const userName = startGame();
+  const userName = greetUser();
   printDirective(DIRECTIVE_PROGRESSION);
 
   for (let i = 1; i <= GAME_ROUNDS; i += 1) {

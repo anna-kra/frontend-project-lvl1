@@ -1,3 +1,3 @@
-import { startGame } from '../cli.js';
+import { greetUser } from '../cli.js';
 
-startGame();
+greetUser();
