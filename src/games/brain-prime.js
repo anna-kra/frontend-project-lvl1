@@ -10,11 +10,11 @@ const DIRECTIVE_PRIME = 'Answer "yes" if given number is prime. Otherwise answer
 const GAME_ROUNDS = 3;
 
 const isPrime = (num) => {
-  let numIsPrime = 'yes';
+  let numIsPrime = true;
 
   for (let i = 2; i < num; i += 1) {
     if (num % i === 0) {
-      numIsPrime = 'no';
+      numIsPrime = false;
       break;
     }
   }
@@ -22,9 +22,16 @@ const isPrime = (num) => {
   return numIsPrime;
 };
 
-const isAnswerCorrect = (num, userAnswer) => (
-  (isPrime(num) === 'yes' && userAnswer === 'yes') || (isPrime(num) === 'no' && userAnswer === 'no')
-);
+const getCorrectAnswer = (num, userAnswer) => {
+  let correctAnswer = '';
+  if (isPrime(num) === true && userAnswer === 'yes') {
+    correctAnswer = 'yes';
+  }
+  if (isPrime(num) === false && userAnswer === 'no') {
+    correctAnswer = 'no';
+  }
+  return correctAnswer;
+};
 
 const startBrainPrime = () => {
   printGreeting();
@@ -34,12 +41,12 @@ const startBrainPrime = () => {
 
   for (let i = 1; i <= GAME_ROUNDS; i += 1) {
     const rundomInt = getRandomInt(200);
-    const correctAnswer = isPrime(rundomInt);
 
     printQuestion([rundomInt]);
     const userAnswer = getUserAnswer();
+    const correctAnswer = getCorrectAnswer(rundomInt, userAnswer);
 
-    if (isAnswerCorrect(rundomInt, userAnswer)) {
+    if (correctAnswer === userAnswer) {
       printCorrect();
     } else {
       printNotCorrect(userAnswer, correctAnswer, userName);
