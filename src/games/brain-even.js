@@ -14,10 +14,6 @@ const GAME_ROUNDS = 3;
 
 const isEven = (num) => (num % 2 === 0);
 
-const isAnswerCorrect = (randomInt, userAnswer) => (
-  (isEven(randomInt) === true && userAnswer === 'yes') || (isEven(randomInt) === false && userAnswer === 'no')
-);
-
 const getAnswerCorrect = (randomInt) => {
   let correctAnswer = '';
 
@@ -42,7 +38,7 @@ const startBrainEven = () => {
     const userAnswer = getUserAnswer();
     const correctAnswer = getAnswerCorrect(randomInt, userAnswer);
 
-    if (isAnswerCorrect(randomInt, userAnswer)) {
+    if (correctAnswer === userAnswer) {
       printCorrect();
     } else {
       printNotCorrect(userAnswer, correctAnswer, userName);
