@@ -3,7 +3,6 @@ import getRandomInt from '../common.js';
 import {
   getUserAnswer,
   printQuestion,
-  printNotCorrect,
   greetUser,
 } from '../cli.js';
 
@@ -48,7 +47,7 @@ const startBrainPrime = () => {
     const correctAnswer = getCorrectAnswer(rundomInt, userAnswer);
 
     if (correctAnswer !== userAnswer) {
-      printNotCorrect(userAnswer, correctAnswer, userName);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);
       return false;
     }
 
