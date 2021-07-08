@@ -2,7 +2,7 @@ import getRandomInt from '../common.js';
 
 import {
   getUserAnswer,
-  printDirective, printQuestion,
+  printQuestion,
   printCorrect, printNotCorrect, printCongratulations,
   greetUser,
 } from '../cli.js';
@@ -32,7 +32,7 @@ const generateProgression = () => {
 
 const startBrainProgression = () => {
   const userName = greetUser();
-  printDirective(DIRECTIVE_PROGRESSION);
+  console.log(DIRECTIVE_PROGRESSION);
 
   for (let i = 1; i <= GAME_ROUNDS; i += 1) {
     const progression = generateProgression();

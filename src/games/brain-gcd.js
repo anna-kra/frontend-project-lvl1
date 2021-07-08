@@ -2,7 +2,7 @@ import getRandomInt from '../common.js';
 
 import {
   getUserAnswer,
-  printDirective, printQuestion,
+  printQuestion,
   printCorrect, printNotCorrect, printCongratulations,
   greetUser,
 } from '../cli.js';
@@ -26,7 +26,7 @@ const getBiggestCommonDivider = (num1, num2) => {
 
 const startBrainGcd = () => {
   const userName = greetUser();
-  printDirective(DIRECTIVE_GCD);
+  console.log(DIRECTIVE_GCD);
 
   for (let i = 1; i <= GAME_ROUNDS; i += 1) {
     const rundomInt1 = getRandomInt(MAX_RANDOM_NUMBER);

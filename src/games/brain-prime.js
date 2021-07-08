@@ -2,7 +2,7 @@ import getRandomInt from '../common.js';
 
 import {
   getUserAnswer,
-  printDirective, printQuestion,
+  printQuestion,
   printCorrect, printNotCorrect, printCongratulations,
   greetUser,
 } from '../cli.js';
@@ -36,7 +36,7 @@ const getCorrectAnswer = (num, userAnswer) => {
 
 const startBrainPrime = () => {
   const userName = greetUser();
-  printDirective(DIRECTIVE_PRIME);
+  console.log(DIRECTIVE_PRIME);
 
   for (let i = 1; i <= GAME_ROUNDS; i += 1) {
     const rundomInt = getRandomInt(200);

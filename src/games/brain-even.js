@@ -2,7 +2,7 @@ import getRandomInt from '../common.js';
 
 import {
   getUserAnswer,
-  printDirective, printQuestion,
+  printQuestion,
   printCorrect, printNotCorrect, printCongratulations,
   greetUser,
 } from '../cli.js';
@@ -27,7 +27,7 @@ const getCorrectAnswer = (randomInt) => {
 
 const startBrainEven = () => {
   const userName = greetUser();
-  printDirective(DIRECTIVE_EVEN);
+  console.log(DIRECTIVE_EVEN);
 
   for (let i = 1; i <= GAME_ROUNDS; i += 1) {
     const randomInt = getRandomInt(MAX_RANDOM_NUMBER);

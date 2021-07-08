@@ -2,7 +2,7 @@ import getRandomInt from '../common.js';
 
 import {
   getUserAnswer,
-  printDirective, printQuestion,
+  printQuestion,
   printCorrect, printNotCorrect, printCongratulations,
   greetUser,
 } from '../cli.js';
@@ -34,7 +34,7 @@ const calculate = (num1, num2, symbol) => {
 
 const startBrainCalc = () => {
   const userName = greetUser();
-  printDirective(DIRECTIVE_CALC);
+  console.log(DIRECTIVE_CALC);
 
   for (let i = 1; i <= GAME_ROUNDS; i += 1) {
     const randomInt1 = getRandomInt(MAX_RANDOM_NUMBER);
