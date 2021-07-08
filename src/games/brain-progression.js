@@ -1,10 +1,5 @@
 import getRandomInt from '../common.js';
-
-import {
-  printQuestion,
-  greetUser,
-  askQuestion,
-} from '../cli.js';
+import { greetUser, askQuestion, printQuestion } from '../cli.js';
 
 const DIRECTIVE_PROGRESSION = 'What number is missing in the progression?';
 

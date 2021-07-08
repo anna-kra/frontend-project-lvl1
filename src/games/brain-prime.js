@@ -1,10 +1,5 @@
 import getRandomInt from '../common.js';
-
-import {
-  printQuestion,
-  greetUser,
-  askQuestion,
-} from '../cli.js';
+import { greetUser, askQuestion, printQuestion } from '../cli.js';
 
 const DIRECTIVE_PRIME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const GAME_ROUNDS = 3;

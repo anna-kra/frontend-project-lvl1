@@ -1,10 +1,5 @@
 import getRandomInt from '../common.js';
-
-import {
-  printQuestion,
-  greetUser,
-  askQuestion,
-} from '../cli.js';
+import { greetUser, askQuestion, printQuestion } from '../cli.js';
 
 const DIRECTIVE_EVEN = 'Answer "yes" if the number is even, otherwise answer "no".';
 const MAX_RANDOM_NUMBER = 1000;

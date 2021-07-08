@@ -1,10 +1,5 @@
 import getRandomInt from '../common.js';
-
-import {
-  printQuestion,
-  greetUser,
-  askQuestion,
-} from '../cli.js';
+import { greetUser, askQuestion, printQuestion } from '../cli.js';
 
 const DIRECTIVE_GCD = 'Find the greatest common divisor of given numbers.';
 const MAX_RANDOM_NUMBER = 100;
