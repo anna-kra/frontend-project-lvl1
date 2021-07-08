@@ -47,11 +47,11 @@ const startBrainPrime = () => {
     const correctAnswer = getCorrectAnswer(rundomInt, userAnswer);
 
     if (correctAnswer === userAnswer) {
-      printCorrect();
-    } else {
       printNotCorrect(userAnswer, correctAnswer, userName);
       return false;
     }
+
+    printCorrect();
   }
   printCongratulations(userName);
   return true;

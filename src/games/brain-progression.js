@@ -49,11 +49,11 @@ const startBrainProgression = () => {
     const userAnswer = Number(getUserAnswer());
 
     if (correctAnswer === userAnswer) {
-      printCorrect();
-    } else {
       printNotCorrect(userAnswer, correctAnswer, userName);
       return false;
     }
+
+    printCorrect();
   }
   printCongratulations(userName);
   return true;

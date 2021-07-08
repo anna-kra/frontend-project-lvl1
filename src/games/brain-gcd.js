@@ -37,12 +37,12 @@ const startBrainGcd = () => {
     printQuestion([rundomInt1, rundomInt2]);
     const userAnswer = Number(getUserAnswer());
 
-    if (correctAnswer === userAnswer) {
-      printCorrect();
-    } else {
+    if (correctAnswer !== userAnswer) {
       printNotCorrect(userAnswer, correctAnswer, userName);
       return false;
     }
+
+    printCorrect();
   }
   printCongratulations(userName);
   return true;

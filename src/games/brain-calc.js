@@ -46,12 +46,12 @@ const startBrainCalc = () => {
     printQuestion([randomInt1, randomSymbol, randomInt2]);
     const userAnswer = Number(getUserAnswer());
 
-    if (correctAnswer === userAnswer) {
-      printCorrect();
-    } else {
+    if (correctAnswer !== userAnswer) {
       printNotCorrect(userAnswer, correctAnswer, userName);
       return false;
     }
+
+    printCorrect();
   }
   printCongratulations(userName);
   return true;
