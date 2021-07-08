@@ -3,13 +3,15 @@ import getRandomInt from '../common.js';
 import {
   getUserAnswer,
   printQuestion,
-  printCorrect, printNotCorrect, printCongratulations,
+  printNotCorrect,
   greetUser,
 } from '../cli.js';
 
 const DIRECTIVE_CALC = 'What is the result of the expression?';
 const MAX_RANDOM_NUMBER = 10;
 const GAME_ROUNDS = 3;
+const CONGRATULATIONS = 'Congratulations';
+const ANSWER_CORRECT = 'Correct!';
 
 const getRandomSymbol = (arrSymbols) => arrSymbols[getRandomInt(arrSymbols.length - 1)];
 
@@ -50,9 +52,10 @@ const startBrainCalc = () => {
       return false;
     }
 
-    printCorrect();
+    console.log(ANSWER_CORRECT);
   }
-  printCongratulations(userName);
+
+  console.log(`${CONGRATULATIONS}, ${userName}!`);
   return true;
 };
 

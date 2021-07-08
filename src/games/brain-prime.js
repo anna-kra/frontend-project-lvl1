@@ -3,12 +3,14 @@ import getRandomInt from '../common.js';
 import {
   getUserAnswer,
   printQuestion,
-  printCorrect, printNotCorrect, printCongratulations,
+  printNotCorrect,
   greetUser,
 } from '../cli.js';
 
 const DIRECTIVE_PRIME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const GAME_ROUNDS = 3;
+const CONGRATULATIONS = 'Congratulations';
+const ANSWER_CORRECT = 'Correct!';
 
 const isPrime = (num) => {
   let numIsPrime = true;
@@ -50,9 +52,9 @@ const startBrainPrime = () => {
       return false;
     }
 
-    printCorrect();
+    console.log(ANSWER_CORRECT);
   }
-  printCongratulations(userName);
+  console.log(`${CONGRATULATIONS}, ${userName}!`);
   return true;
 };
 

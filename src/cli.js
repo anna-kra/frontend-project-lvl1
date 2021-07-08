@@ -4,10 +4,6 @@ export const question = (text) => readlineSync.question(text);
 
 export const getUserAnswer = () => question('Your answer: ');
 
-export const printCongratulations = (userName) => console.log(`Congratulations, ${userName}!`);
-
-export const printCorrect = () => console.log('Correct!');
-
 export const printDirective = (text) => console.log(text);
 
 export const printNotCorrect = (userAnswer, correctAnswer, userName) => (

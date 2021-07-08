@@ -3,7 +3,7 @@ import getRandomInt from '../common.js';
 import {
   getUserAnswer,
   printQuestion,
-  printCorrect, printNotCorrect, printCongratulations,
+  printNotCorrect,
   greetUser,
 } from '../cli.js';
 
@@ -14,6 +14,8 @@ const MAX_STEP_IN_PROGRESSION = 10;
 const MIN_LENGTH_OF_PROGRESSION = 5;
 const MAX_LENGTH_OF_PROGRESSION = 10;
 const GAME_ROUNDS = 3;
+const CONGRATULATIONS = 'Congratulations';
+const ANSWER_CORRECT = 'Correct!';
 
 const getIntBetween = (min, max) => min + Math.floor(Math.random() * (max - min));
 
@@ -52,9 +54,9 @@ const startBrainProgression = () => {
       return false;
     }
 
-    printCorrect();
+    console.log(ANSWER_CORRECT);
   }
-  printCongratulations(userName);
+  console.log(`${CONGRATULATIONS}, ${userName}!`);
   return true;
 };
 

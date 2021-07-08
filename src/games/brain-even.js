@@ -3,13 +3,15 @@ import getRandomInt from '../common.js';
 import {
   getUserAnswer,
   printQuestion,
-  printCorrect, printNotCorrect, printCongratulations,
+  printNotCorrect,
   greetUser,
 } from '../cli.js';
 
 const DIRECTIVE_EVEN = 'Answer "yes" if the number is even, otherwise answer "no".';
 const MAX_RANDOM_NUMBER = 1000;
 const GAME_ROUNDS = 3;
+const CONGRATULATIONS = 'Congratulations';
+const ANSWER_CORRECT = 'Correct!';
 
 const isEven = (num) => (num % 2 === 0);
 
@@ -40,9 +42,9 @@ const startBrainEven = () => {
       return false;
     }
 
-    printCorrect();
+    console.log(ANSWER_CORRECT);
   }
-  printCongratulations(userName);
+  console.log(`${CONGRATULATIONS}, ${userName}!`);
   return true;
 };
 

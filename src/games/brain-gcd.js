@@ -3,13 +3,15 @@ import getRandomInt from '../common.js';
 import {
   getUserAnswer,
   printQuestion,
-  printCorrect, printNotCorrect, printCongratulations,
+  printNotCorrect,
   greetUser,
 } from '../cli.js';
 
 const DIRECTIVE_GCD = 'Find the greatest common divisor of given numbers.';
 const MAX_RANDOM_NUMBER = 100;
 const GAME_ROUNDS = 3;
+const CONGRATULATIONS = 'Congratulations';
+const ANSWER_CORRECT = 'Correct!';
 
 const getBiggestCommonDivider = (num1, num2) => {
   const maxOfTwoNumbers = Math.max(num1, num2);
@@ -41,9 +43,9 @@ const startBrainGcd = () => {
       return false;
     }
 
-    printCorrect();
+    console.log(ANSWER_CORRECT);
   }
-  printCongratulations(userName);
+  console.log(`${CONGRATULATIONS}, ${userName}!`);
   return true;
 };
 
