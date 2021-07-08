@@ -29,10 +29,6 @@ const generateProgression = () => {
   return progression;
 };
 
-const isAnswerCorrect = (randomPartInProgression, userAnswer) => (
-  randomPartInProgression === userAnswer
-);
-
 const startBrainProgression = () => {
   printGreeting();
   const userName = getUserName();
@@ -52,7 +48,7 @@ const startBrainProgression = () => {
     printQuestion([progressionQuizPresentation]);
     const userAnswer = Number(getUserAnswer());
 
-    if (isAnswerCorrect(randomPartInProgression, userAnswer)) {
+    if (correctAnswer === userAnswer) {
       printCorrect();
     } else {
       printNotCorrect(userAnswer, correctAnswer, userName);
