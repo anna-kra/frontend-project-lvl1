@@ -7,9 +7,7 @@ import {
 } from '../cli.js';
 
 const DIRECTIVE_EVEN = 'Answer "yes" if the number is even, otherwise answer "no".';
-
 const MAX_RANDOM_NUMBER = 1000;
-
 const GAME_ROUNDS = 3;
 
 const isEven = (num) => (num % 2 === 0);

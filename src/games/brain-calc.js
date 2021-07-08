@@ -7,9 +7,7 @@ import {
 } from '../cli.js';
 
 const DIRECTIVE_CALC = 'What is the result of the expression?';
-
 const MAX_RANDOM_NUMBER = 10;
-
 const GAME_ROUNDS = 3;
 
 const getRandomSymbol = (arrSymbols) => arrSymbols[getRandomInt(arrSymbols.length - 1)];
