@@ -8,9 +8,9 @@ const CONGRATULATIONS = 'Congratulations';
 const ANSWER_CORRECT = 'Correct!';
 const YOUR_ANSWER = 'Your answer: ';
 
-const WELCOME_TEXT = 'Welcome to the Brain Games!';
-const ASC_FOR_NAME = 'May I have your name? ';
-const GREETING_WORD = 'Hello';
+// const WELCOME_TEXT = 'Welcome to the Brain Games!';
+// const ASC_FOR_NAME = 'May I have your name? ';
+// const GREETING_WORD = 'Hello';
 
 const MESSAGE_WRONG_ANSWER_PART1 = 'is wrong answer ;(. Correct answer was';
 const MESSAGE_WRONG_ANSWER_PART2 = 'Let\'s try again,';
@@ -29,7 +29,7 @@ const getBiggestCommonDivider = (num1, num2) => {
 };
 
 const startBrainGcd = () => {
-  const userName = greetUser(WELCOME_TEXT, ASC_FOR_NAME, GREETING_WORD);
+  const userName = greetUser();
   console.log(DIRECTIVE_GCD);
 
   for (let i = 1; i <= GAME_ROUNDS; i += 1) {

@@ -22,9 +22,16 @@ export const printQuestion = (arrParam) => console.log(`Question: ${arrParam.joi
 //   return userName;
 // };
 
-export const greetUser = (welcomeText, ascForName, greetingWord) => {
-  console.log(welcomeText);
-  const userName = askQuestion(ascForName);
-  console.log(`${greetingWord}, ${userName}!`);
+// export const greetUser = (welcomeText, ascForName, greetingWord) => {
+//   console.log(welcomeText);
+//   const userName = askQuestion(ascForName);
+//   console.log(`${greetingWord}, ${userName}!`);
+//   return userName;
+// };
+
+export const greetUser = () => {
+  console.log('Welcome to the Brain Games!');
+  const userName = askQuestion('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
   return userName;
 };
