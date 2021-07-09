@@ -8,6 +8,13 @@ const CONGRATULATIONS = 'Congratulations';
 const ANSWER_CORRECT = 'Correct!';
 const YOUR_ANSWER = 'Your answer: ';
 
+const WELCOME_TEXT = 'Welcome to the Brain Games!';
+const ASC_FOR_NAME = 'May I have your name? ';
+const GREETING_WORD = 'Hello';
+
+const MESSAGE_WRONG_ANSWER_PART1 = 'is wrong answer ;(. Correct answer was';
+const MESSAGE_WRONG_ANSWER_PART2 = 'Let\'s try again,';
+
 const getBiggestCommonDivider = (num1, num2) => {
   const maxOfTwoNumbers = Math.max(num1, num2);
   const limit = Math.round(maxOfTwoNumbers / 2);
@@ -22,7 +29,7 @@ const getBiggestCommonDivider = (num1, num2) => {
 };
 
 const startBrainGcd = () => {
-  const userName = greetUser();
+  const userName = greetUser(WELCOME_TEXT, ASC_FOR_NAME, GREETING_WORD);
   console.log(DIRECTIVE_GCD);
 
   for (let i = 1; i <= GAME_ROUNDS; i += 1) {
@@ -34,7 +41,7 @@ const startBrainGcd = () => {
     const userAnswer = Number(askQuestion(YOUR_ANSWER));
 
     if (correctAnswer !== userAnswer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);
+      console.log(`'${userAnswer}' ${MESSAGE_WRONG_ANSWER_PART1} '${correctAnswer}'. ${MESSAGE_WRONG_ANSWER_PART2} ${userName}!`);
       return false;
     }
 

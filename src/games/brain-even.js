@@ -8,6 +8,13 @@ const CONGRATULATIONS = 'Congratulations';
 const ANSWER_CORRECT = 'Correct!';
 const YOUR_ANSWER = 'Your answer: ';
 
+const WELCOME_TEXT = 'Welcome to the Brain Games!';
+const ASC_FOR_NAME = 'May I have your name? ';
+const GREETING_WORD = 'Hello';
+
+const MESSAGE_WRONG_ANSWER_PART1 = 'is wrong answer ;(. Correct answer was';
+const MESSAGE_WRONG_ANSWER_PART2 = 'Let\'s try again,';
+
 const isEven = (num) => (num % 2 === 0);
 
 const getCorrectAnswer = (randomInt) => {
@@ -23,7 +30,7 @@ const getCorrectAnswer = (randomInt) => {
 };
 
 const startBrainEven = () => {
-  const userName = greetUser();
+  const userName = greetUser(WELCOME_TEXT, ASC_FOR_NAME, GREETING_WORD);
   console.log(DIRECTIVE_EVEN);
 
   for (let i = 1; i <= GAME_ROUNDS; i += 1) {
@@ -33,7 +40,7 @@ const startBrainEven = () => {
     const correctAnswer = getCorrectAnswer(randomInt, userAnswer);
 
     if (correctAnswer !== userAnswer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);
+      console.log(`'${userAnswer}' ${MESSAGE_WRONG_ANSWER_PART1} '${correctAnswer}'. ${MESSAGE_WRONG_ANSWER_PART2} ${userName}!`);
       return false;
     }
 
