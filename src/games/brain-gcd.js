@@ -32,7 +32,7 @@ const startBrainGcd = () => {
   const userName = greetUser();
   console.log(DIRECTIVE_GCD);
 
-  for (let i = 1; i <= GAME_ROUNDS; i += 1) {
+  for (let y = 1; y <= GAME_ROUNDS; y += 1) {
     const rundomInt1 = getRandomInt(MAX_RANDOM_NUMBER);
     const rundomInt2 = getRandomInt(MAX_RANDOM_NUMBER);
     const correctAnswer = getBiggestCommonDivider(rundomInt1, rundomInt2);
