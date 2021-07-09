@@ -42,7 +42,7 @@ const startBrainPrime = () => {
   const userName = greetUser();
   console.log(DIRECTIVE_PRIME);
 
-  for (let i = 1; i <= GAME_ROUNDS; i += 1) {
+  for (let y = 1; y <= GAME_ROUNDS; y += 1) {
     const rundomInt = getRandomInt(200);
 
     printQuestion([rundomInt]);
