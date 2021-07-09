@@ -49,7 +49,7 @@ const startBrainPrime = () => {
     const userAnswer = askQuestion(YOUR_ANSWER);
     const correctAnswer = getCorrectAnswer(rundomInt, userAnswer);
 
-    if (correctAnswer !== userAnswer) {
+    if ((correctAnswer !== userAnswer) || (correctAnswer === '')) {
       console.log(`'${userAnswer}' ${MESSAGE_WRONG_ANSWER_PART1} '${correctAnswer}'. ${MESSAGE_WRONG_ANSWER_PART2} ${userName}!`);
       return false;
     }
