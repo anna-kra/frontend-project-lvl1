@@ -7,6 +7,14 @@
 
 [![Node CI](https://github.com/anna-kra/frontend-project-lvl1/actions/workflows/nodejs.yml/badge.svg)](https://github.com/anna-kra/frontend-project-lvl1/actions/workflows/nodejs.yml)
 
+## To start a game, please type one of these commands in the console:    
+```brain-games```  
+```brain-even```  
+```brain-calc```  
+```brain-gcd```  
+```brain-progression```  
+```brain-prime```  
+
 ## Asciinemas:   
 ### brain-games  
 [![asciicast](https://asciinema.org/a/EG4xibHDB7fswJYrSmGlEoObt.svg)](https://asciinema.org/a/EG4xibHDB7fswJYrSmGlEoObt)  
