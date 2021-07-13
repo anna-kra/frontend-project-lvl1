@@ -1,23 +1,12 @@
 import getRandomInt from '../common.js';
-import { greetUser, askQuestion, printQuestion } from '../cli.js';
+import playGame from '../index.js';
+import { printQuestion } from '../cli.js';
 
 const DIRECTIVE_PROGRESSION = 'What number is missing in the progression?';
-
 const MAX_START_IN_PROGRESSION = 100;
 const MAX_STEP_IN_PROGRESSION = 10;
 const MIN_LENGTH_OF_PROGRESSION = 5;
 const MAX_LENGTH_OF_PROGRESSION = 10;
-const GAME_ROUNDS = 3;
-const CONGRATULATIONS = 'Congratulations';
-const ANSWER_CORRECT = 'Correct!';
-const YOUR_ANSWER = 'Your answer: ';
-
-// const WELCOME_TEXT = 'Welcome to the Brain Games!';
-// const ASC_FOR_NAME = 'May I have your name? ';
-// const GREETING_WORD = 'Hello';
-
-const MESSAGE_WRONG_ANSWER_PART1 = 'is wrong answer ;(. Correct answer was';
-const MESSAGE_WRONG_ANSWER_PART2 = 'Let\'s try again,';
 
 const getIntBetween = (min, max) => min + Math.floor(Math.random() * (max - min));
 
@@ -34,32 +23,17 @@ const generateProgression = () => {
   return progression;
 };
 
-const startBrainProgression = () => {
-  const userName = greetUser();
-  console.log(DIRECTIVE_PROGRESSION);
+const playSpecificGame = () => {
+  const progression = generateProgression();
+  const randomIndex = getIntBetween(0, progression.length - 1);
+  const randomPartInProgression = progression[randomIndex];
+  const correctAnswer = randomPartInProgression;
 
-  for (let i = 1; i <= GAME_ROUNDS; i += 1) {
-    const progression = generateProgression();
-    const randomIndex = getIntBetween(0, progression.length - 1);
-    const randomPartInProgression = progression[randomIndex];
-    const correctAnswer = randomPartInProgression;
-
-    const progressionQuiz = [...progression];
-    progressionQuiz[randomIndex] = '..';
-    const progressionQuizPresentation = progressionQuiz.join(' ');
-
-    printQuestion([progressionQuizPresentation]);
-    const userAnswer = Number(askQuestion(YOUR_ANSWER));
-
-    if (correctAnswer !== userAnswer) {
-      console.log(`'${userAnswer}' ${MESSAGE_WRONG_ANSWER_PART1} '${correctAnswer}'. ${MESSAGE_WRONG_ANSWER_PART2} ${userName}!`);
-      return false;
-    }
-
-    console.log(ANSWER_CORRECT);
-  }
-  console.log(`${CONGRATULATIONS}, ${userName}!`);
-  return true;
+  const progressionQuiz = [...progression];
+  progressionQuiz[randomIndex] = '..';
+  const progressionQuizPresentation = progressionQuiz.join(' ');
+  printQuestion([progressionQuizPresentation]);
+  return String(correctAnswer);
 };
 
-export default startBrainProgression;
+export default playGame(DIRECTIVE_PROGRESSION, playSpecificGame);
