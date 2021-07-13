@@ -26,4 +26,4 @@ const playSpecificGame = () => {
   return correctAnswer;
 };
 
-export default playGame(DIRECTIVE_EVEN, playSpecificGame);
+export default () => playGame(DIRECTIVE_EVEN, playSpecificGame);

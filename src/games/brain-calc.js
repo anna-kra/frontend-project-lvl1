@@ -35,4 +35,5 @@ const playSpecificGame = () => {
   return String(correctAnswer);
 };
 
-export default playGame(DIRECTIVE_CALC, playSpecificGame);
+// export default playGame(DIRECTIVE_CALC, playSpecificGame);
+export default () => playGame(DIRECTIVE_CALC, playSpecificGame);

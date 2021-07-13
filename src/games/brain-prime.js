@@ -48,4 +48,4 @@ const playSpecificGame = () => {
   return correctAnswer;
 };
 
-export default playGame(DIRECTIVE_PRIME, playSpecificGame);
+export default () => playGame(DIRECTIVE_PRIME, playSpecificGame);

@@ -26,4 +26,4 @@ const playSpecificGame = () => {
   return String(correctAnswer);
 };
 
-export default playGame(DIRECTIVE_GCD, playSpecificGame);
+export default () => playGame(DIRECTIVE_GCD, playSpecificGame);

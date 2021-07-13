@@ -36,4 +36,4 @@ const playSpecificGame = () => {
   return String(correctAnswer);
 };
 
-export default playGame(DIRECTIVE_PROGRESSION, playSpecificGame);
+export default () => playGame(DIRECTIVE_PROGRESSION, playSpecificGame);
