@@ -18,11 +18,11 @@ const isPrime = (num) => {
   return numIsPrime;
 };
 
-const playSpecificGame = () => {
+const genRound = () => {
   const num = getRandomInt(maxRandomNumber);
   printQuestion([num]);
   const correctAnswer = isPrime(num) ? 'yes' : 'no';
   return correctAnswer;
 };
 
-export default () => playGame(directivePrime, playSpecificGame);
+export default () => playGame(directivePrime, genRound);

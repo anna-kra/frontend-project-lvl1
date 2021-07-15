@@ -7,11 +7,11 @@ const maxRandomNumber = 1000;
 
 const isEven = (num) => (num % 2 === 0);
 
-const playSpecificGame = () => {
+const genRound = () => {
   const num = getRandomInt(maxRandomNumber);
   printQuestion([num]);
   const correctAnswer = isEven(num) ? 'yes' : 'no';
   return correctAnswer;
 };
 
-export default () => playGame(directiveEven, playSpecificGame);
+export default () => playGame(directiveEven, genRound);

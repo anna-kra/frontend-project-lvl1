@@ -18,7 +18,7 @@ const getBiggestCommonDivider = (num1, num2) => {
   return 1;
 };
 
-const playSpecificGame = () => {
+const genRound = () => {
   const num1 = getRandomInt(maxRandomNumber);
   const num2 = getRandomInt(maxRandomNumber);
   const correctAnswer = getBiggestCommonDivider(num1, num2);
@@ -27,4 +27,4 @@ const playSpecificGame = () => {
 };
 // test
 
-export default () => playGame(directiveGcd, playSpecificGame);
+export default () => playGame(directiveGcd, genRound);

@@ -23,7 +23,7 @@ const generateProgression = () => {
   return progression;
 };
 
-const playSpecificGame = () => {
+const genRound = () => {
   const progression = generateProgression();
   const randomIndex = getIntBetween(0, progression.length - 1);
   const randomPartInProgression = progression[randomIndex];
@@ -36,4 +36,4 @@ const playSpecificGame = () => {
   return String(correctAnswer);
 };
 
-export default () => playGame(directiveProgression, playSpecificGame);
+export default () => playGame(directiveProgression, genRound);

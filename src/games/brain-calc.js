@@ -19,7 +19,7 @@ const calculate = (num1, num2, symbol) => {
   }
 };
 
-const playSpecificGame = () => {
+const genRound = () => {
   const num1 = getRandomInt(maxRandomNumber);
   const num2 = getRandomInt(maxRandomNumber);
   const randomSymbol = getRandomSymbol(['+', '-', '*']);
@@ -28,4 +28,4 @@ const playSpecificGame = () => {
   return String(correctAnswer);
 };
 
-export default () => playGame(directiveCalc, playSpecificGame);
+export default () => playGame(directiveCalc, genRound);
