@@ -6,16 +6,13 @@ const directivePrime = 'Answer "yes" if given number is prime. Otherwise answer 
 const maxRandomNumber = 200;
 
 const isPrime = (num) => {
-  let numIsPrime = true;
-
+  if (num < 2) { return false; }
   for (let i = 2; i < num; i += 1) {
     if (num % i === 0) {
-      numIsPrime = false;
-      break;
+      return false;
     }
   }
-
-  return numIsPrime;
+  return true;
 };
 
 const genRound = () => {
