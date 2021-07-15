@@ -8,22 +8,15 @@ const maxRandomNumber = 10;
 const getRandomSymbol = (arrSymbols) => arrSymbols[getRandomInt(arrSymbols.length - 1)];
 
 const calculate = (num1, num2, symbol) => {
-  let result = 0;
-
   switch (symbol) {
     case '+':
-      result = num1 + num2;
-      break;
+      return num1 + num2;
     case '-':
-      result = num1 - num2;
-      break;
+      return num1 - num2;
     case '*':
-      result = num1 * num2;
-      break;
-    default: result = 0;
+      return num1 * num2;
+    default: throw new Error('Sorry! This operation is not available.');
   }
-
-  return result;
 };
 
 const playSpecificGame = () => {
