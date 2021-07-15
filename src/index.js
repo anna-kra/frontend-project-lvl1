@@ -1,12 +1,12 @@
 import { greetUser, askQuestion } from './cli.js';
 
-const GAME_ROUNDS = 3;
+const gameRounds = 3;
 
 const playGame = (directive, playSpecificGame) => {
   const userName = greetUser();
   console.log(directive);
 
-  for (let i = 1; i <= GAME_ROUNDS; i += 1) {
+  for (let i = 1; i <= gameRounds; i += 1) {
     const correctAnswer = playSpecificGame();
     const userAnswer = askQuestion('Your answer: ');
 

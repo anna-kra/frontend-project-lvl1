@@ -2,18 +2,18 @@ import getRandomInt from '../common.js';
 import playGame from '../index.js';
 import { printQuestion } from '../cli.js';
 
-const DIRECTIVE_PROGRESSION = 'What number is missing in the progression?';
-const MAX_START_IN_PROGRESSION = 100;
-const MAX_STEP_IN_PROGRESSION = 10;
-const MIN_LENGTH_OF_PROGRESSION = 5;
-const MAX_LENGTH_OF_PROGRESSION = 10;
+const directiveProgression = 'What number is missing in the progression?';
+const maxStartInProgression = 100;
+const maxStepInProgression = 10;
+const minLengthOfProgression = 5;
+const maxLengthOfProgression = 10;
 
 const getIntBetween = (min, max) => min + Math.floor(Math.random() * (max - min));
 
 const generateProgression = () => {
-  const start = getRandomInt(MAX_START_IN_PROGRESSION);
-  const step = getRandomInt(MAX_STEP_IN_PROGRESSION);
-  const length = getIntBetween(MIN_LENGTH_OF_PROGRESSION, MAX_LENGTH_OF_PROGRESSION);
+  const start = getRandomInt(maxStartInProgression);
+  const step = getRandomInt(maxStepInProgression);
+  const length = getIntBetween(minLengthOfProgression, maxLengthOfProgression);
   const progression = [];
 
   for (let i = 0; i < length; i += 1) {
@@ -36,4 +36,4 @@ const playSpecificGame = () => {
   return String(correctAnswer);
 };
 
-export default () => playGame(DIRECTIVE_PROGRESSION, playSpecificGame);
+export default () => playGame(directiveProgression, playSpecificGame);

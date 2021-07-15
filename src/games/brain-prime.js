@@ -2,8 +2,8 @@ import getRandomInt from '../common.js';
 import playGame from '../index.js';
 import { printQuestion } from '../cli.js';
 
-const DIRECTIVE_PRIME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const MAX_RANDOM_NUMBER = 200;
+const directivePrime = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const maxRandomNumber = 200;
 
 const isPrime = (num) => {
   let numIsPrime = true;
@@ -18,17 +18,6 @@ const isPrime = (num) => {
   return numIsPrime;
 };
 
-// const getCorrectAnswer = (num, userAnswer) => {
-//   let correctAnswer = '';
-//   if (isPrime(num) === true && userAnswer === 'yes') {
-//     correctAnswer = 'yes';
-//   }
-//   if (isPrime(num) === false && userAnswer === 'no') {
-//     correctAnswer = 'no';
-//   }
-//   return correctAnswer;
-// };
-
 const getCorrectAnswer = (num) => {
   let correctAnswer = '';
 
@@ -42,10 +31,10 @@ const getCorrectAnswer = (num) => {
 };
 
 const playSpecificGame = () => {
-  const rundomInt = getRandomInt(MAX_RANDOM_NUMBER);
+  const rundomInt = getRandomInt(maxRandomNumber);
   printQuestion([rundomInt]);
   const correctAnswer = getCorrectAnswer(rundomInt);
   return correctAnswer;
 };
 
-export default () => playGame(DIRECTIVE_PRIME, playSpecificGame);
+export default () => playGame(directivePrime, playSpecificGame);
