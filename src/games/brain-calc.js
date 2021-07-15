@@ -27,11 +27,11 @@ const calculate = (num1, num2, symbol) => {
 };
 
 const playSpecificGame = () => {
-  const randomInt1 = getRandomInt(maxRandomNumber);
-  const randomInt2 = getRandomInt(maxRandomNumber);
+  const num1 = getRandomInt(maxRandomNumber);
+  const num2 = getRandomInt(maxRandomNumber);
   const randomSymbol = getRandomSymbol(['+', '-', '*']);
-  const correctAnswer = calculate(randomInt1, randomInt2, randomSymbol);
-  printQuestion([randomInt1, randomSymbol, randomInt2]);
+  const correctAnswer = calculate(num1, num2, randomSymbol);
+  printQuestion([num1, randomSymbol, num2]);
   return String(correctAnswer);
 };
 

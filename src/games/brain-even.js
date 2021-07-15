@@ -8,9 +8,9 @@ const maxRandomNumber = 1000;
 const isEven = (num) => (num % 2 === 0);
 
 const playSpecificGame = () => {
-  const randomInt = getRandomInt(maxRandomNumber);
-  printQuestion([randomInt]);
-  const correctAnswer = isEven(randomInt) ? 'yes' : 'no';
+  const num = getRandomInt(maxRandomNumber);
+  printQuestion([num]);
+  const correctAnswer = isEven(num) ? 'yes' : 'no';
   return correctAnswer;
 };
 

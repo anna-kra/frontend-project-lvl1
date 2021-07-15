@@ -19,10 +19,10 @@ const getBiggestCommonDivider = (num1, num2) => {
 };
 
 const playSpecificGame = () => {
-  const rundomInt1 = getRandomInt(maxRandomNumber);
-  const rundomInt2 = getRandomInt(maxRandomNumber);
-  const correctAnswer = getBiggestCommonDivider(rundomInt1, rundomInt2);
-  printQuestion([rundomInt1, rundomInt2]);
+  const num1 = getRandomInt(maxRandomNumber);
+  const num2 = getRandomInt(maxRandomNumber);
+  const correctAnswer = getBiggestCommonDivider(num1, num2);
+  printQuestion([num1, num2]);
   return String(correctAnswer);
 };
 

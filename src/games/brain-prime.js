@@ -19,9 +19,9 @@ const isPrime = (num) => {
 };
 
 const playSpecificGame = () => {
-  const rundomInt = getRandomInt(maxRandomNumber);
-  printQuestion([rundomInt]);
-  const correctAnswer = isPrime(rundomInt) ? 'yes' : 'no';
+  const num = getRandomInt(maxRandomNumber);
+  printQuestion([num]);
+  const correctAnswer = isPrime(num) ? 'yes' : 'no';
   return correctAnswer;
 };
 
