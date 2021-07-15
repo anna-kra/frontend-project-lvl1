@@ -10,15 +10,14 @@ const playGame = (directive, playSpecificGame) => {
     const correctAnswer = playSpecificGame();
     const userAnswer = askQuestion('Your answer: ');
 
-    if ((correctAnswer !== userAnswer) || (correctAnswer === '')) {
+    if (correctAnswer !== userAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);
-      return false;
+      return;
     }
 
     console.log('Correct!');
   }
   console.log(`Congratulations, ${userName}!`);
-  return true;
 };
 
 export default playGame;
