@@ -10,8 +10,8 @@ const isEven = (num) => (num % 2 === 0);
 const genRound = () => {
   const num = getRandomInt(maxRandomNumber);
   printQuestion([num]);
-  const correctAnswer = isEven(num) ? 'yes' : 'no';
-  return correctAnswer;
+  const answer = isEven(num) ? 'yes' : 'no';
+  return answer;
 };
 
 export default () => playGame(directiveEven, genRound);

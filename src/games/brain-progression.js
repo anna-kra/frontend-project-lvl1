@@ -27,13 +27,13 @@ const genRound = () => {
   const progression = generateProgression();
   const randomIndex = getIntBetween(0, progression.length - 1);
   const randomPartInProgression = progression[randomIndex];
-  const correctAnswer = randomPartInProgression;
+  const answer = randomPartInProgression;
 
   const progressionQuiz = [...progression];
   progressionQuiz[randomIndex] = '..';
   const progressionQuizPresentation = progressionQuiz.join(' ');
   printQuestion([progressionQuizPresentation]);
-  return String(correctAnswer);
+  return String(answer);
 };
 
 export default () => playGame(directiveProgression, genRound);

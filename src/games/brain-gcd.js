@@ -21,9 +21,9 @@ const getBiggestCommonDivider = (num1, num2) => {
 const genRound = () => {
   const num1 = getRandomInt(maxRandomNumber);
   const num2 = getRandomInt(maxRandomNumber);
-  const correctAnswer = getBiggestCommonDivider(num1, num2);
+  const answer = getBiggestCommonDivider(num1, num2);
   printQuestion([num1, num2]);
-  return String(correctAnswer);
+  return String(answer);
 };
 // test
 

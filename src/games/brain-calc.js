@@ -23,10 +23,9 @@ const genRound = () => {
   const num1 = getRandomInt(maxRandomNumber);
   const num2 = getRandomInt(maxRandomNumber);
   const randomOperator = getRandomOperator(['+', '-', '*']);
-  const correctAnswer = calculate(num1, num2, randomOperator);
+  const answer = calculate(num1, num2, randomOperator);
   printQuestion([num1, randomOperator, num2]);
-  return String(correctAnswer);
+  return String(answer);
 };
 
-// test
 export default () => playGame(directiveCalc, genRound);

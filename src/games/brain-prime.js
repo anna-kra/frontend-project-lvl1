@@ -21,8 +21,8 @@ const isPrime = (num) => {
 const genRound = () => {
   const num = getRandomInt(maxRandomNumber);
   printQuestion([num]);
-  const correctAnswer = isPrime(num) ? 'yes' : 'no';
-  return correctAnswer;
+  const answer = isPrime(num) ? 'yes' : 'no';
+  return answer;
 };
 
 export default () => playGame(directivePrime, genRound);
