@@ -28,4 +28,5 @@ const genRound = () => {
   return String(correctAnswer);
 };
 
+//test
 export default () => playGame(directiveCalc, genRound);
