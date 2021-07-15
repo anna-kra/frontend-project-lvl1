@@ -18,22 +18,10 @@ const isPrime = (num) => {
   return numIsPrime;
 };
 
-const getCorrectAnswer = (num) => {
-  let correctAnswer = '';
-
-  if (isPrime(num)) {
-    correctAnswer = 'yes';
-  } else if (!isPrime(num)) {
-    correctAnswer = 'no';
-  }
-
-  return correctAnswer;
-};
-
 const playSpecificGame = () => {
   const rundomInt = getRandomInt(maxRandomNumber);
   printQuestion([rundomInt]);
-  const correctAnswer = getCorrectAnswer(rundomInt);
+  const correctAnswer = isPrime(rundomInt) ? 'yes' : 'no';
   return correctAnswer;
 };
 

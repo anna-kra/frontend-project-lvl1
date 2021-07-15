@@ -7,22 +7,10 @@ const maxRandomNumber = 1000;
 
 const isEven = (num) => (num % 2 === 0);
 
-const getCorrectAnswer = (randomInt) => {
-  let correctAnswer = '';
-
-  if (isEven(randomInt)) {
-    correctAnswer = 'yes';
-  } else if (!isEven(randomInt)) {
-    correctAnswer = 'no';
-  }
-
-  return correctAnswer;
-};
-
 const playSpecificGame = () => {
   const randomInt = getRandomInt(maxRandomNumber);
   printQuestion([randomInt]);
-  const correctAnswer = getCorrectAnswer(randomInt);
+  const correctAnswer = isEven(randomInt) ? 'yes' : 'no';
   return correctAnswer;
 };
 
