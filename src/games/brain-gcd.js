@@ -25,5 +25,6 @@ const playSpecificGame = () => {
   printQuestion([num1, num2]);
   return String(correctAnswer);
 };
+// test
 
 export default () => playGame(directiveGcd, playSpecificGame);
