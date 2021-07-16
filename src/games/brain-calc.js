@@ -26,6 +26,5 @@ const genRound = () => {
   const question = `${num1} ${randomOperator} ${num2}`;
   return [question, answer];
 };
-// test
 
 export default () => playGame(directiveCalc, genRound);
