@@ -1,10 +1,11 @@
 import readlineSync from 'readline-sync';
-import greetUser from './cli.js';
 
 const gameRounds = 3;
 
 const playGame = (directive, genRound) => {
-  const userName = greetUser();
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
   console.log(directive);
 
   for (let i = 1; i <= gameRounds; i += 1) {
