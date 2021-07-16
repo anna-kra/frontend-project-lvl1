@@ -31,7 +31,7 @@ const genRound = () => {
   const progressionQuiz = [...progression];
   progressionQuiz[randomIndex] = '..';
   const progressionQuizPresentation = progressionQuiz.join(' ');
-  const question = `Question: ${progressionQuizPresentation}`;
+  const question = `${progressionQuizPresentation}`;
   return [question, answer];
 };
 

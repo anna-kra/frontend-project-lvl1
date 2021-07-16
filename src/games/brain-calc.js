@@ -23,7 +23,7 @@ const genRound = () => {
   const num2 = getRandomInt(maxRandomNumber);
   const randomOperator = getRandomOperator(['+', '-', '*']);
   const answer = String(calculate(num1, num2, randomOperator));
-  const question = `Question: ${num1} ${randomOperator} ${num2}`;
+  const question = `${num1} ${randomOperator} ${num2}`;
   return [question, answer];
 };
 

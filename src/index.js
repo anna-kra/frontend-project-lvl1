@@ -9,7 +9,7 @@ const playGame = (directive, genRound) => {
 
   for (let i = 1; i <= gameRounds; i += 1) {
     const [question, answer] = genRound();
-    console.log(question);
+    console.log(`Question:  ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
     if (answer !== userAnswer) {
