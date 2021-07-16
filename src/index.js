@@ -22,5 +22,5 @@ const playGame = (directive, genRound) => {
   }
   console.log(`Congratulations, ${userName}!`);
 };
-// test
+
 export default playGame;

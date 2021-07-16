@@ -2,6 +2,7 @@ import getRandomInt from '../common.js';
 import playGame from '../index.js';
 
 const directiveGcd = 'Find the greatest common divisor of given numbers.';
+const minRandomNumber = 1;
 const maxRandomNumber = 100;
 
 const getBiggestCommonDivider = (num1, num2) => {
@@ -18,8 +19,8 @@ const getBiggestCommonDivider = (num1, num2) => {
 };
 
 const genRound = () => {
-  const num1 = getRandomInt(maxRandomNumber);
-  const num2 = getRandomInt(maxRandomNumber);
+  const num1 = getRandomInt(minRandomNumber, maxRandomNumber);
+  const num2 = getRandomInt(minRandomNumber, maxRandomNumber);
   const answer = String(getBiggestCommonDivider(num1, num2));
   const question = `${num1} ${num2}`;
   return [question, answer];
