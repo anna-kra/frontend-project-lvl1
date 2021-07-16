@@ -1,6 +1,5 @@
 import getRandomInt from '../common.js';
 import playGame from '../index.js';
-import { printQuestion } from '../cli.js';
 
 const directiveProgression = 'What number is missing in the progression?';
 const maxStartInProgression = 100;
@@ -27,13 +26,13 @@ const genRound = () => {
   const progression = generateProgression();
   const randomIndex = getIntBetween(0, progression.length - 1);
   const randomPartInProgression = progression[randomIndex];
-  const answer = randomPartInProgression;
+  const answer = String(randomPartInProgression);
 
   const progressionQuiz = [...progression];
   progressionQuiz[randomIndex] = '..';
   const progressionQuizPresentation = progressionQuiz.join(' ');
-  printQuestion([progressionQuizPresentation]);
-  return String(answer);
+  const question = `Question: ${progressionQuizPresentation}`;
+  return [question, answer];
 };
 
 export default () => playGame(directiveProgression, genRound);

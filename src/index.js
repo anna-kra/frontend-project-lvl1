@@ -1,17 +1,19 @@
-import { greetUser, askQuestion } from './cli.js';
+import readlineSync from 'readline-sync';
+import greetUser from './cli.js';
 
 const gameRounds = 3;
 
-const playGame = (directive, playSpecificGame) => {
+const playGame = (directive, genRound) => {
   const userName = greetUser();
   console.log(directive);
 
   for (let i = 1; i <= gameRounds; i += 1) {
-    const correctAnswer = playSpecificGame();
-    const userAnswer = askQuestion('Your answer: ');
+    const [question, answer] = genRound();
+    console.log(question);
+    const userAnswer = readlineSync.question('Your answer: ');
 
-    if (correctAnswer !== userAnswer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);
+    if (answer !== userAnswer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'. Let's try again, ${userName}!`);
       return;
     }
 
@@ -19,5 +21,5 @@ const playGame = (directive, playSpecificGame) => {
   }
   console.log(`Congratulations, ${userName}!`);
 };
-// test
+
 export default playGame;

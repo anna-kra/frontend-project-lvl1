@@ -1,6 +1,5 @@
 import getRandomInt from '../common.js';
 import playGame from '../index.js';
-import { printQuestion } from '../cli.js';
 
 const directiveCalc = 'What is the result of the expression?';
 const maxRandomNumber = 10;
@@ -23,9 +22,9 @@ const genRound = () => {
   const num1 = getRandomInt(maxRandomNumber);
   const num2 = getRandomInt(maxRandomNumber);
   const randomOperator = getRandomOperator(['+', '-', '*']);
-  const answer = calculate(num1, num2, randomOperator);
-  printQuestion([num1, randomOperator, num2]);
-  return String(answer);
+  const answer = String(calculate(num1, num2, randomOperator));
+  const question = `Question: ${num1} ${randomOperator} ${num2}`;
+  return [question, answer];
 };
 
 export default () => playGame(directiveCalc, genRound);
